@@ -1,0 +1,28 @@
+.navbar{
+    height: 75px;
+    width: 100%;
+    position: sticky;
+    display: flex;
+    top: 0;
+    background-color: #242424;
+}
+.basket{
+    width: 30px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.hr{
+    width: 1px;
+    height: 50%;
+    margin-left: 5px;
+    margin-top: 15px;
+    border-color: #505050;
+}
+.user{
+    width: 30px;
+    margin-left: 5px;
+}
+.left{
+    display: flex;
+    width: fit-content;
+}
