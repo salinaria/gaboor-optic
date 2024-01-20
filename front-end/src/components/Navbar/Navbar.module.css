@@ -1,66 +1,127 @@
-.navbar{
-    height: 75px;
-    width: 100%;
-    position: sticky;
-    display: flex;
-    top: 0;
-    background-color: #242424;
+.navbar {
+  height: 75px;
+  width: 100%;
+  position: sticky;
+  display: flex;
+  top: 0;
+  background-color: #242424;
 }
-.basket{
-    width: 30px;
-    margin-left: 10px;
-    margin-right: 5px;
+.basket {
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
-.hr{
-    width: 1px;
-    height: 50%;
-    margin-left: 5px;
-    margin-top: 20px;
-    border-color: #505050;
+.hr {
+  width: 2px;
+  height: 50%;
+  border-radius: 1px;
+  margin-left: 5px;
+  margin-top: 20px;
+  border-color: none;
+  background-color: #505050;
+  color: none;
 }
-.user{
-    width: 30px;
-    margin-left: 5px;
+.user {
+  width: 30px;
+  margin-left: 5px;
 }
-.left{
-    display: flex;
-    width: -moz-fit-content;
-    width: fit-content;
+.left {
+  display: flex;
+  float: left;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.brands{
-    height: 60px;
-    margin-top: 10px;
-    margin-left: 10%;
+.brands {
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 10%;
 }
-.brand_text{
-    color: aliceblue;
-    margin-top: 25px;
+.brand_text {
+  color: aliceblue;
+  margin-top: 25px;
 }
+.brbutton{
+    display: flex;
+}
+
 .dropdown {
-    position: relative;
-    display: flex;
-    margin-left: 10%;
-  }
-  
-  .dropdown_content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown_content {
-    display: flex;
-    margin-top: 75px;
-    background-color: #242424;
-    color: aliceblue;
-  }
+  position: relative;
+  display: flex;
+  margin-left: 10%;
+}
 
-  
-.search{
-    width: 30px;
-    margin-left: 20%;
+.brline{
+    width: 3px;
+    height: 110px;
+    background-color: red;
+    transform:rotate(90deg);
+    margin-top: 18px;
+    margin-left: -45px;
+    visibility: hidden;
+}
+.dropdown:hover .brline{
+    visibility: visible;
+}
+
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  width: 250px;
+  z-index: 1;
+  padding: 0px;
+}
+
+.dropdown:hover .dropdown_content {
+  display: flex;
+  margin-top: 75px;
+  background-color: #242424;
+  color: aliceblue;
+}
+
+.first_col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.sec_col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.col {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.col:hover {
+  background-color: #535353;
+}
+
+.search {
+  width: 30px;
+  margin-left: 20%;
+}
+
+.right {
+  display: flex;
+  position: absolute;
+  direction: rtl;
+  width: -moz-fit-content;
+  right: 0;
+  width: fit-content;
+  margin-right: 10px;
+}
+
+.homepage {
+  float: right;
+  color: red;
+  font-family: "Antic";
+  font-weight: normal;
 }
