@@ -43,10 +43,21 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={classes.right}>
-        <h1 className={classes.homepage}>GaboorOptic</h1>
-        <img src={search} className={classes.search} alt="icon" />
+      <div class={classes.search_container}>
+        <form action="/search_page.js">
+          <input
+            type="text"
+            placeholder="جستجو..."
+            name="search"
+            className={classes.searchbox}
+          />
+          <button type="submit" className={classes.searchbutt}>
+            <img src={search} className={classes.search} alt="icon" />
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
       </div>
+      <h1 className={classes.homepage}>GaboorOptic</h1>
     </div>
   );
 };

@@ -48,7 +48,7 @@
 .dropdown {
   position: relative;
   display: flex;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .brline{
@@ -66,6 +66,7 @@
 
 
 .dropdown_content {
+  font-family: 'Antic';
   display: none;
   position: absolute;
   width: 250px;
@@ -77,7 +78,7 @@
   display: flex;
   margin-top: 75px;
   background-color: #242424;
-  color: aliceblue;
+  color: white;
 }
 
 .first_col {
@@ -94,7 +95,7 @@
 
 .col {
   text-align: center;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
   text-decoration: none;
   padding-bottom: 10px;
@@ -102,11 +103,6 @@
 }
 .col:hover {
   background-color: #535353;
-}
-
-.search {
-  width: 30px;
-  margin-left: 20%;
 }
 
 .right {
@@ -121,7 +117,56 @@
 
 .homepage {
   float: right;
+  position: absolute;
+  right: 10px;
+  font-family: 'Antic';
+  font-size: 50px;
   color: red;
-  font-family: "Antic";
+  margin-top: 10px;
   font-weight: normal;
+}
+
+.searchbox{
+  width: 90%;
+  height: 45px;
+  margin-top: 10px;
+  border-radius: 10px;
+  direction: rtl;
+  font-family: 'IranSans';
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  background-color: #DFDFDF;
+}
+.search {
+  width: 30px;
+}
+.searchbutt{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  margin-top: 20px;
+  margin-right: -45px;
+  z-index: 100;
+}
+
+.search_container{
+  position: absolute;
+  right: 220px;
+  width: 50%;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+@media only screen and (max-width: 900px) {
+  .homepage{
+    font-size: 35px;
+    margin-top: 15px;
+  }
+  .search_container{
+    right: 160px;
+    width: 40%;
+  }
 }
