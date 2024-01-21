@@ -8,9 +8,13 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.left}>
-        <img src={basket} className={classes.basket} alt="icon" />
+        <a href="/basket" className={classes.usebas}>
+          <img src={basket} className={classes.basket} alt="icon" />
+        </a>
         <div className={classes.hr} />
-        <img src={user} className={classes.user} alt="icon" />
+        <a href="/account" className={classes.usebas}>
+          <img src={user} className={classes.user} alt="icon" />
+        </a>
       </div>
       <div className={classes.dropdown}>
         <div className={classes.brbutton}>
@@ -20,30 +24,30 @@ const Navbar = () => {
         <div className={classes.brline} />
         <div className={classes.dropdown_content}>
           <div className={classes.first_col}>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               Ray Ban
             </a>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               Correra
             </a>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               Oakley
             </a>
           </div>
           <div className={classes.sec_col}>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               Persol
             </a>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               Polaried
             </a>
-            <a href="#" className={classes.col}>
+            <a href="/#" className={classes.col}>
               AliExpress
             </a>
           </div>
         </div>
       </div>
-      <div class={classes.search_container}>
+      <div className={classes.search_container}>
         <form action="/search_page.js">
           <input
             type="text"
@@ -53,11 +57,13 @@ const Navbar = () => {
           />
           <button type="submit" className={classes.searchbutt}>
             <img src={search} className={classes.search} alt="icon" />
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
           </button>
         </form>
       </div>
-      <h1 className={classes.homepage}>GaboorOptic</h1>
+      <a href="/">
+        <h1 className={classes.homepage}>GaboorOptic</h1>
+      </a>
     </div>
   );
 };

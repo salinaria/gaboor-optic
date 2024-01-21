@@ -1,6 +1,7 @@
 .navbar {
   height: 75px;
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   display: flex;
   top: 0;
@@ -24,6 +25,9 @@
 .user {
   width: 30px;
   margin-left: 5px;
+}
+.usebas{
+  margin-top: 25px;
 }
 .left {
   display: flex;
@@ -54,7 +58,7 @@
 .brline{
     width: 3px;
     height: 110px;
-    background-color: red;
+    background-color: #DB0000;
     transform:rotate(90deg);
     margin-top: 18px;
     margin-left: -45px;
@@ -121,7 +125,7 @@
   right: 10px;
   font-family: 'Antic';
   font-size: 50px;
-  color: red;
+  color: #DB0000;
   margin-top: 10px;
   font-weight: normal;
 }
@@ -168,5 +172,38 @@
   .search_container{
     right: 160px;
     width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar{
+    position: absolute;
+    bottom: 0;
+  }
+  .homepage{
+    font-size: 25px;
+    margin-top: 25px;
+    margin-right: 39%;
+  }
+  .searchbox{
+    width: 10%;
+    visibility: hidden;
+  }
+  .brand_text{
+    visibility: hidden;
+  }
+  .hr{
+    visibility: hidden;
+  }
+  .search{
+    width: 20px;
+    margin-top: 9px;
+  }
+  .search_container{
+    width: 15%;
+    margin-right: -25%;
+  }
+  .dropdown{
+    visibility: hidden;
   }
 }
