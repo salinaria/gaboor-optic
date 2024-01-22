@@ -1,14 +1,27 @@
-.find{
-text-align: right;
-margin-top: 30px;
-margin-right: 30px;
-font-size: 20px;
+.find {
+  text-align: right;
+  margin-top: 30px;
+  margin-right: 30px;
+  font-size: 20px;
 }
-.line{
-    position: absolute;
-    border-radius: 5px;
-    width: 50%;
-    height: 5px;
-    background-color: red;
-    right: 30px;
+.line {
+  position: absolute;
+  border-radius: 5px;
+  width: 50%;
+  height: 5px;
+  background-color: red;
+  right: 30px;
 }
+.prompt {
+  text-align: right;
+  margin-top: -74px;
+  margin-right: 160px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .find{
+        margin-top: 90px;
+    }
+  }
+  

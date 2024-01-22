@@ -1,5 +1,5 @@
 import classes from "../Navbar/Navbar.module.css";
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import user from "../../assets/user.svg";
 import basket from "../../assets/basket.svg";
