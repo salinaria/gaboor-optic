@@ -1,0 +1,6 @@
+.newest{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    margin-right: 5%;
+}
