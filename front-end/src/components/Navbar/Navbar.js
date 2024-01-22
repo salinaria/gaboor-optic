@@ -1,10 +1,18 @@
 import classes from "../Navbar/Navbar.module.css";
+import React, { useRef} from "react";
+import { useNavigate } from "react-router-dom";
 import user from "../../assets/user.svg";
 import basket from "../../assets/basket.svg";
 import brands from "../../assets/brands.svg";
 import search from "../../assets/search.svg";
 
 const Navbar = () => {
+  const inputSearch = useRef("");
+  const history = useNavigate();
+  function goSearch() {
+    history("/search/" + inputSearch.current.value);
+  }
+
   return (
     <div className={classes.navbar}>
       <div className={classes.left}>
@@ -48,16 +56,20 @@ const Navbar = () => {
         </div>
       </div>
       <div className={classes.search_container}>
-        <form action="/search_page.js">
+        <form>
           <input
+            ref={inputSearch}
             type="text"
             placeholder="جستجو..."
             name="search"
             className={classes.searchbox}
           />
-          <button type="submit" className={classes.searchbutt}>
+          <button
+            type="submit"
+            onClick={goSearch}
+            className={classes.searchbutt}
+          >
             <img src={search} className={classes.search} alt="icon" />
-            <i className="fa fa-search"></i>
           </button>
         </form>
       </div>
