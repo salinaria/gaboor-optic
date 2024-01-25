@@ -1,6 +1,22 @@
-.newest{
-    display: flex;
-    flex-direction: row;
-    direction: rtl;
-    margin-right: 5%;
+.newest {
+  display: flex;
+  flex-direction: row;
+  direction: rtl;
+  margin-right: 5%;
+  margin-top: 30px;
+}
+.line {
+  position: absolute;
+  border-radius: 5px;
+  width: 50%;
+  height: 5px;
+  background-color: red;
+  right: 30px;
+  margin-top: -20px;
+}
+.new_text {
+  text-align: right;
+  margin-top: 100px;
+  margin-right: 30px;
+  font-size: 20px;
 }

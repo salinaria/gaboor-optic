@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar";
-import classes from "../Home/Home.module.css"
+import classes from "../Home/Home.module.css";
 import GlassMini from "../GlassMini/GlassMini";
 import glass1 from "../../assets/glass1.png";
 
@@ -7,7 +7,10 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <h1>Home</h1>;
+
+      
+      <h1 className={classes.new_text}>جدیدترین عینک‌ها</h1>;
+      <div className={classes.line}></div>
       <div className={classes.newest}>
         <GlassMini
           image={glass1}
