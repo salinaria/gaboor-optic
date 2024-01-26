@@ -178,12 +178,15 @@
 @media only screen and (max-width: 600px) {
   .navbar{
     position: absolute;
+    width: 100%;
     bottom: 0;
   }
   .homepage{
+    position: absolute;
     font-size: 25px;
     margin-top: 25px;
-    margin-right: 39%;
+    text-align: center;
+    width: 100%;
   }
   .searchbox{
     width: 10%;

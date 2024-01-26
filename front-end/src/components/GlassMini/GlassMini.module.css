@@ -1,10 +1,10 @@
 .GlassMini {
-  margin-right: 0%;
+  margin-left: 0%;
 }
 .image {
   z-index: -1;
-  width: 70%;
   transition: transform ease 900ms;
+  width: 70%;
 }
 .info {
   position: relative;
