@@ -26,7 +26,10 @@
   width: 30px;
   margin-left: 5px;
 }
-.usebas {
+.use {
+  margin-top: 25px;
+}
+.bas{
   margin-top: 25px;
 }
 .left {
@@ -188,6 +191,10 @@
     margin-top: 25px;
     text-align: center;
     width: 100%;
+  }
+  .use{
+    position: absolute;
+    right: 5%;
   }
   .search_container {
     margin-top: 75px;

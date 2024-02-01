@@ -16,11 +16,11 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.left}>
-        <a href="/basket" className={classes.usebas}>
+        <a href="/basket" className={classes.use}>
           <img src={basket} className={classes.basket} alt="icon" />
         </a>
         <div className={classes.hr} />
-        <a href="/account" className={classes.usebas}>
+        <a href="/account" className={classes.bas}>
           <img src={user} className={classes.user} alt="icon" />
         </a>
       </div>
