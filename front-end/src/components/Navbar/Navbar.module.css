@@ -26,7 +26,7 @@
   width: 30px;
   margin-left: 5px;
 }
-.usebas{
+.usebas {
   margin-top: 25px;
 }
 .left {
@@ -45,8 +45,8 @@
   color: aliceblue;
   margin-top: 25px;
 }
-.brbutton{
-    display: flex;
+.brbutton {
+  display: flex;
 }
 
 .dropdown {
@@ -55,22 +55,21 @@
   margin-left: 5%;
 }
 
-.brline{
-    width: 3px;
-    height: 110px;
-    background-color: #DB0000;
-    transform:rotate(90deg);
-    margin-top: 18px;
-    margin-left: -45px;
-    visibility: hidden;
+.brline {
+  width: 3px;
+  height: 110px;
+  background-color: #db0000;
+  transform: rotate(90deg);
+  margin-top: 18px;
+  margin-left: -45px;
+  visibility: hidden;
 }
-.dropdown:hover .brline{
-    visibility: visible;
+.dropdown:hover .brline {
+  visibility: visible;
 }
-
 
 .dropdown_content {
-  font-family: 'Antic';
+  font-family: "Antic";
   display: none;
   position: absolute;
   width: 250px;
@@ -123,29 +122,29 @@
   float: right;
   position: absolute;
   right: 10px;
-  font-family: 'Antic';
+  font-family: "Antic";
   font-size: 50px;
-  color: #DB0000;
+  color: #db0000;
   margin-top: 10px;
   font-weight: normal;
 }
 
-.searchbox{
+.searchbox {
   width: 90%;
   height: 45px;
   margin-top: 10px;
   border-radius: 10px;
   direction: rtl;
-  font-family: 'IranSans';
+  font-family: "IranSans";
   font-size: 16px;
   padding: 5px;
   border: none;
-  background-color: #DFDFDF;
+  background-color: #dfdfdf;
 }
 .search {
   width: 30px;
 }
-.searchbutt{
+.searchbutt {
   position: absolute;
   background-color: transparent;
   border: none;
@@ -154,7 +153,7 @@
   z-index: 100;
 }
 
-.search_container{
+.search_container {
   position: absolute;
   right: 220px;
   width: 50%;
@@ -165,48 +164,53 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .homepage{
+  .homepage {
     font-size: 35px;
     margin-top: 15px;
   }
-  .search_container{
+  .search_container {
     right: 160px;
     width: 40%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .navbar{
-    position: absolute;
+  .navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    top: 0;
     width: 100%;
-    bottom: 0;
   }
-  .homepage{
-    position: absolute;
+  .homepage {
+    position: fixed;
     font-size: 25px;
     margin-top: 25px;
     text-align: center;
     width: 100%;
   }
+  .search_container {
+    margin-top: 75px;
+    width: 100%;
+    right: 0;
+    background-color: #242424;
+  }
   .searchbox{
-    width: 10%;
-    visibility: hidden;
-  }
-  .brand_text{
-    visibility: hidden;
-  }
-  .hr{
-    visibility: hidden;
+    width: 90%;
+    margin-right: 5%;
+    height: 40px;
   }
   .search{
     width: 20px;
-    margin-top: 9px;
+    margin-top: 5px;
   }
-  .search_container{
-    width: 15%;
-    margin-right: -25%;
-  }
-  .dropdown{
+  .brand_text {
     visibility: hidden;
+  }
+  .hr {
+    visibility: hidden;
+  }
+  .dropdown {
+   visibility: hidden;
   }
 }
