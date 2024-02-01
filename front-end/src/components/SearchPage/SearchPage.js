@@ -1,6 +1,5 @@
 import Navbar from "../Navbar/Navbar";
 import classes from "../SearchPage/SearchPage.module.css"
-import GlassMini from "../GlassMini/GlassMini";
 import { useParams } from "react-router";
 
 const SearchPage = () => {
