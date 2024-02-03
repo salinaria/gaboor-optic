@@ -190,7 +190,8 @@
     font-size: 25px;
     margin-top: 25px;
     text-align: center;
-    width: 100%;
+    width: 30%;
+    margin-right: calc(40% - 30px);
   }
   .use{
     position: absolute;
