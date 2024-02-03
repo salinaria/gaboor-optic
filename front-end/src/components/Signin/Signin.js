@@ -1,6 +1,7 @@
 import classes from "../Login/Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import next from "../../assets/next.svg";
 
 const Signin = () => {
   const history = useNavigate();
@@ -46,6 +47,10 @@ const Signin = () => {
             ساخت حساب
           </button>
         </form>
+        <a href="/Login" className={classes.signin}>
+          <p>حساب دارم! ورود</p>
+          <img src={next} alt="Login" />
+        </a>
       </div>
     </div>
   );

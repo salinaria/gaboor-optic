@@ -57,11 +57,26 @@
   .btn:hover{
     background-color: #DB0000;
   }
+
+  .signin{
+    text-decoration: none;
+    color: #DB0000;
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -50px;
+    width: 50%;
+  }
+  .signin img{
+    width: 10px;
+    margin-right: 10px;
+  }
+  
   
   @media only screen and (max-width: 600px) {
     .container{
-      width: 70%;
-      margin-left: 10%;
+      width: 80%;
+      margin-left: 3%;
       border: none;
     }
   }
