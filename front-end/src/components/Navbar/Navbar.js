@@ -20,7 +20,7 @@ const Navbar = () => {
           <img src={basket} className={classes.basket} alt="icon" />
         </a>
         <div className={classes.hr} />
-        <a href="/account" className={classes.bas}>
+        <a href="/Login" className={classes.bas}>
           <img src={user} className={classes.user} alt="icon" />
         </a>
       </div>

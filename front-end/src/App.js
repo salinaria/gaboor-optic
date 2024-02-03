@@ -10,7 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search/:search" element={<SearchPage />} />
-        <Route path="/account" element = {<Login/>}/>
+        <Route path="/Login" element = {<Login/>}/>
+        <Route path="/Signin" element = {<Signin/>}/>
       </Routes>
     </BrowserRouter>
   );
