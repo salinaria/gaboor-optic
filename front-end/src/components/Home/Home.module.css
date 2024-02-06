@@ -13,6 +13,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 .new_text {
   text-align: right;
