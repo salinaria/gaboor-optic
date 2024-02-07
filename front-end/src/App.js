@@ -5,6 +5,7 @@ import SearchPage from "./components/SearchPage/SearchPage";
 import Login from "./components/Login/Login";
 import Signin from "./components/Signin/Signin";
 import UserPage from "./components/Userpage/UserPage";
+import Basket from "./components/Basket/Basket";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search/:search" element={<SearchPage />} />
-        <Route path="/Login" element = {<Login/>}/>
-        <Route path="/Signin" element = {<Signin/>}/>
-        <Route path="/UserPage" element ={<UserPage/>}/>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/UserPage" element={<UserPage />} />
+        <Route path="/basket" element={<Basket />} />
       </Routes>
     </BrowserRouter>
   );
