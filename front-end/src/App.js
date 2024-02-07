@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import Signin from "./components/Signin/Signin";
 import UserPage from "./components/Userpage/UserPage";
 import Basket from "./components/Basket/Basket";
+import GlassPage from "./components/GlassPage/GlassPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Signin" element={<Signin />} />
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/glass/:id" element={<GlassPage />} />
       </Routes>
     </BrowserRouter>
   );

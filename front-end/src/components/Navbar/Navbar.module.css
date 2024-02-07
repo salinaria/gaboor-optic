@@ -6,6 +6,7 @@
   display: flex;
   top: 0;
   background-color: #242424;
+  z-index: 10000;
 }
 .basket {
   width: 30px;
