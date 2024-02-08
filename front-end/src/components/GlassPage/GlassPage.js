@@ -4,7 +4,8 @@ import glassline from "../../assets/glassline.svg";
 import glass1 from "../../assets/glass1.png";
 import glass2 from "../../assets/glass2.png";
 import glass3 from "../../assets/glass3.png";
-
+import cart_add from "../../assets/cart-add.svg";
+import close from "../../assets/close.svg";
 import GlassMini from "../Miniglass/Miniglass";
 
 const newest = [
@@ -56,7 +57,11 @@ const GlassPage = (props) => {
           alt="glassImage"
         />
         <div className={classes.info}>
-          <p className={classes.title}>مشخصات عینک</p>
+          <div className={classes.title}>
+            <img src={close} alt="close" />
+            <p>مشخصات عینک</p>
+            <img src={close} alt="close" />
+          </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
               <h1>{array.name}</h1>
@@ -80,6 +85,10 @@ const GlassPage = (props) => {
               <h1>قیمت</h1>
             </div>
           </div>
+          <button className={classes.button}>
+            <img src={cart_add} alt="cart" />
+            <p>افزودن به سبد خرید</p>
+          </button>
         </div>
       </div>
       <div className={classes.newest}>
