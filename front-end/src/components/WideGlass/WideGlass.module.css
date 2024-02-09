@@ -11,10 +11,21 @@
   display: grid;
   grid-column: 1/2;
   width: 30%;
+  border-radius: 10px;
 }
 .info {
   display: grid;
   grid-column: 2/2;
   text-align: left;
   font-size: 45px;
+}
+@media only screen and (max-width: 600px) {
+  .image{
+    width: 40%;
+    margin-top: 2%;
+    border-radius: 5px;
+  }
+  .GlassMini{
+    border-radius: 5px;
+  }
 }

@@ -110,3 +110,17 @@ p {
   font-family: "IranSans";
   margin-top: 8px;
 }
+
+@media only screen and (max-width: 1200px) {
+  .container{
+    display: block;
+  }
+  .image{
+    width: 50%;
+    margin-left: 25%;
+  }
+  .glassline{
+    margin-right: 25%;
+  }
+}
+

@@ -47,12 +47,12 @@ const Basket = () => {
       <div className={classes.sum}>
         <p className={classes.title}>جمع خرید من</p>
         {newest.map((glass, index) => (
-          <p>{glass.price}</p>
+          <p className={classes.numbers}>{glass.price}</p>
         ))}
         <p className={classes.discount0}>۰</p>
         <p className={classes.discount}>تخفیف</p>
         <div className={classes.line2}></div>
-        <p>۱۳.۸۰۰.۰۰۰</p>
+        <p className={classes.sumall}>۱۳.۸۰۰.۰۰۰</p>
         <p className={classes.legend}>نهایی</p>
       </div>
     </div>
