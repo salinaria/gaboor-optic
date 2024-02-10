@@ -12,7 +12,7 @@ const Login = () => {
     <div>
       <Navbar />
       <div className={classes.container}>
-        <p>ورود</p>
+        <p className={classes.title}>ورود</p>
         <form className={classes.form}>
           <p>ایمیل</p>
           <input

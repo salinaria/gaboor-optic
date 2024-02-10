@@ -7,6 +7,9 @@
   border-radius: 10px;
   padding: 20px;
 }
+.title{
+  text-align: center;
+}
 .form {
   text-align: right;
 }

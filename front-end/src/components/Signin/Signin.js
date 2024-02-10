@@ -12,7 +12,7 @@ const Signin = () => {
     <div>
       <Navbar />
       <div className={classes.container}>
-        <p>ثبت نام</p>
+        <p className={classes.title}>ثبت نام</p>
         <form className={classes.form}>
           <p>نام</p>
           <input
