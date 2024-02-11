@@ -149,4 +149,10 @@ p {
   .autocont{
     margin-top: 0;
   }
+  .line{
+    height: 1px;
+  }
+  .new_text{
+    font-size: 16px;
+  }
 }

@@ -7,6 +7,7 @@ import Signin from "./components/Signin/Signin";
 import UserPage from "./components/Userpage/UserPage";
 import Basket from "./components/Basket/Basket";
 import GlassPage from "./components/GlassPage/GlassPage";
+import Tryon from "./components/Tryon/Tryon";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/glass/:id" element={<GlassPage />} />
+        <Route path="/tryon" element={<Tryon />} />
       </Routes>
     </BrowserRouter>
   );
