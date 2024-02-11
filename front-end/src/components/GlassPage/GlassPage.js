@@ -7,6 +7,8 @@ import glass3 from "../../assets/glass3.png";
 import cart_add from "../../assets/cart-add.svg";
 import close from "../../assets/close.svg";
 import GlassMini from "../Miniglass/Miniglass";
+import Tryon from "../Tryon/Tryon";
+import React, { useRef } from "react";
 
 const newest = [
   {
@@ -42,20 +44,56 @@ const array = {
   link: "/glass/aviator",
 };
 const GlassPage = (props) => {
+  const refImage = useRef();
+  const refTry = useRef();
+  const refTrybut = useRef();
+  const refImagebut = useRef();
+
+  function setImage() {
+    refImage.current.style.display = "block";
+    refTry.current.style.display = "none";
+    refImagebut.current.style.display = "block";
+    refTrybut.current.style.display = "none";
+  }
+
+  function setTry() {
+    console.log("hi");
+    console.log(refTry.current);
+    refTry.current.style.display = "block";
+    refImage.current.style.display = "none";
+    refImagebut.current.style.display = "block";
+    refTrybut.current.style.display = "none";
+  }
+
   return (
     <div>
       <Navbar />
-      <p>
+      <p className={classes.comeon}>
         !با استفاده از واقعیت مجازی، عینک را روی صورت خود ببینید و بعد انتخاب
         کنید
       </p>
       <div className={classes.container}>
+        <div className={classes.butcont}>
+          <button className={classes.butt} onClick={setTry}>
+            امتحان روی صورت
+            <div className={classes.buttline} style={{display:'none'}} useRef={refTrybut}></div>
+          </button>
+          <button className={classes.butt} onClick={setImage}>
+            عکس
+            <div className={classes.buttline} style={{display:'block'}} useRef={refImagebut}></div>
+          </button>
+        </div>
         <img
           id="image"
+          ref={refImage}
           src={array.image}
           className={classes.image}
           alt="glassImage"
+          style={{display:'block'}}
         />
+        <div className={classes.try} style={{display:'none'}}>
+          <Tryon ref={refTry} />
+        </div>
         <div className={classes.info}>
           <div className={classes.title}>
             <img src={close} alt="close" />

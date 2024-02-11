@@ -7,12 +7,33 @@ p {
   display: grid;
   grid-template-columns: 60% 40%;
 }
+.butcont {
+  margin-left: 15%;
+  margin-top: -45px;
+}
+.butt {
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  border: none;
+  font-family: "IranSans";
+}
+.buttline {
+  width: 100%;
+  height: 4px;
+  background-color: red;
+  margin-top: 15px;
+}
 .image {
   grid-column: 1/2;
   display: grid;
   margin-right: 0;
   height: max-content;
   width: 100%;
+}
+.try {
+  display: none;
 }
 .info {
   padding: 3%;
@@ -111,13 +132,21 @@ p {
 }
 
 @media only screen and (max-width: 1200px) {
+  .comeon{
+    visibility: hidden;
+  }
+  .butcont{
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+  }
   .container {
     display: block;
   }
   .image {
     width: 70%;
     margin-left: 15%;
-    margin-top: 40px;
+    margin-top: 0px;
   }
   .info {
     width: 66%;
@@ -125,7 +154,7 @@ p {
     margin-left: 15%;
     padding-bottom: 30px;
   }
-  .autocont{
+  .autocont {
     margin-top: 0;
   }
   .button {
@@ -134,10 +163,13 @@ p {
     margin-top: 30px;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 600px) {
   .image {
     width: 90%;
     margin-left: 5%;
+    margin-top: 0px;
+  }
+  .butcont {
     margin-top: 40px;
   }
   .info {
@@ -146,13 +178,13 @@ p {
     margin-left: 5%;
     padding-bottom: 30px;
   }
-  .autocont{
+  .autocont {
     margin-top: 0;
   }
-  .line{
+  .line {
     height: 1px;
   }
-  .new_text{
+  .new_text {
     font-size: 16px;
   }
 }
