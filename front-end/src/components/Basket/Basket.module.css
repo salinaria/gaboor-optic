@@ -56,7 +56,7 @@ body {
 }
 .discount {
   text-align: right;
-  margin-top: -50px;
+  margin-top: -44px;
   color: red;
 }
 
@@ -66,10 +66,11 @@ body {
 }
 .sumall {
   text-align: left;
+  margin-top: 0px;
 }
 .legend {
   text-align: right;
-  margin-top: -50px;
+  margin-top: -46px;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -1,5 +1,4 @@
 import classes from "../Miniglass/Miniglass.module.css";
-import next from "../../assets/next.svg";
 
 const GlassMini = (props) => {
   return (
@@ -14,9 +13,6 @@ const GlassMini = (props) => {
           </div>
         </a>
       ))}
-      <div className={classes.next}> 
-        <img src={next} alt="next"/>
-      </div>
     </div>
   );
 };

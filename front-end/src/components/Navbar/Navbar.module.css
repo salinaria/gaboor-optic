@@ -145,6 +145,11 @@
   border: none;
   background-color: #dfdfdf;
 }
+.searchbox:focus{
+  outline: none;
+  background-color:#666666;
+  color: white;
+}
 .search {
   width: 30px;
 }

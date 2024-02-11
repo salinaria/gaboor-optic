@@ -4,10 +4,8 @@ import slide1 from "../../assets/slide1.png";
 import glass1 from "../../assets/glass1.png";
 import glass2 from "../../assets/glass2.png";
 import glass3 from "../../assets/glass3.png";
-import glass4 from "../../assets/glass4.jpg";
-import glass5 from "../../assets/glass5.jpg";
-import next from "../../assets/next.svg";
 import GlassMini from "../Miniglass/Miniglass";
+
 const newest = [
   { image: glass1, name: "Aviator", brand: "Ray Ban", price: "1,400", link:'/glass/aviator' },
   { image: glass2, name: "Aviator", brand: "Ray Ban", price: "1,300", link:'/glass/aviator' },
@@ -18,7 +16,7 @@ const Home = () => {
     <div>
       <Navbar />
 
-      <a href="/mega" className={classes.slide}>
+      <a href="/glass/mega" className={classes.slide}>
         <img className={classes.slide_img} src={slide1} alt="slide" />
       </a>
       <div className={classes.newest}>

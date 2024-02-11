@@ -1,6 +1,7 @@
 .GlassMini {
   display: grid;
   direction: rtl;
+  align-items: center;
   width: 100%;
   border: 3px solid #535353;
   border-radius: 10px;
@@ -9,8 +10,8 @@
 }
 .image {
   display: grid;
-  grid-column: 1/2;
   width: 30%;
+  grid-column: 1/2;
   border-radius: 10px;
 }
 .info {

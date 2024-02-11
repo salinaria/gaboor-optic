@@ -32,24 +32,24 @@ const Navbar = () => {
         <div className={classes.brline} />
         <div className={classes.dropdown_content}>
           <div className={classes.first_col}>
-            <a href="/#" className={classes.col}>
+            <a href="/search/Ray%20Ban" className={classes.col}>
               Ray Ban
             </a>
-            <a href="/#" className={classes.col}>
+            <a href="/search/Correra" className={classes.col}>
               Correra
             </a>
-            <a href="/#" className={classes.col}>
+            <a href="/search/Oakley" className={classes.col}>
               Oakley
             </a>
           </div>
           <div className={classes.sec_col}>
-            <a href="/#" className={classes.col}>
+            <a href="/search/Persol" className={classes.col}>
               Persol
             </a>
-            <a href="/#" className={classes.col}>
-              Polaried
+            <a href="/search/Polaroid" className={classes.col}>
+              Polariod
             </a>
-            <a href="/#" className={classes.col}>
+            <a href="/search/AliExpress" className={classes.col}>
               AliExpress
             </a>
           </div>
