@@ -1,53 +1,22 @@
 import classes from "../GlassPage/GlassPage.module.css";
 import Navbar from "../Navbar/Navbar";
 import glassline from "../../assets/glassline.svg";
-import glass1 from "../../assets/glass1.png";
-import glass2 from "../../assets/glass2.png";
-import glass3 from "../../assets/glass3.png";
 import cart_add from "../../assets/cart-add.svg";
 import close from "../../assets/close.svg";
 import GlassMini from "../Miniglass/Miniglass";
 import Tryon from "../Tryon/Tryon";
-import React, { useRef } from "react";
+import axios from "axios";
+import React, { useRef, useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-const newest = [
-  {
-    image: glass1,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "1,400",
-    link: "/glass/aviator",
-  },
-  {
-    image: glass2,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "1,300",
-    link: "/glass/aviator",
-  },
-  {
-    image: glass3,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "1,800",
-    link: "/glass/aviator",
-  },
-];
-
-const array = {
-  image: glass1,
-  name: "Aviator",
-  brand: "Ray Ban",
-  price: "۱.۴۰۰.۰۰۰",
-  sex: "مردانه",
-  color: "طلایی",
-  link: "/glass/aviator",
-};
 const GlassPage = (props) => {
+  let slug = useParams();
+  let requestOptions;
   const refImage = useRef();
   const refTry = useRef();
   const refTrybut = useRef();
   const refImagebut = useRef();
+  const [isWish, setWish] = useState("not found");
 
   function setImage() {
     refImage.current.style.display = "block";
@@ -64,6 +33,37 @@ const GlassPage = (props) => {
     refImagebut.current.style.display = "block";
     refTrybut.current.style.display = "none";
   }
+  const currentUser = () => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  };
+  const thisuser = currentUser();
+  const customHeader = () => ({
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Token " + currentUser().token,
+    },
+    validateStatus: (status) => status === 200,
+  });
+  const [Data, setData] = useState({
+    sku_id: "",
+    name: "",
+    image: "",
+    brand: "",
+    sex: "",
+    price: 0,
+    color: "",
+    recom: [],
+  });
+
+  useEffect(() => {
+    if (thisuser != null) {
+      requestOptions = customHeader();
+    }
+    axios
+      .get("http://127.0.0.1:8000/api/movie/" + String(slug.id))
+      .then((response) => setData(response.data))
+      .catch(console.log(""));
+  }, []);
 
   return (
     <div>
@@ -76,22 +76,31 @@ const GlassPage = (props) => {
         <div className={classes.butcont}>
           <button className={classes.butt} onClick={setTry}>
             امتحان روی صورت
-            <div className={classes.buttline} style={{display:'none'}} useRef={refTrybut}></div>
+            <div
+              className={classes.buttline}
+              style={{ display: "none" }}
+              useRef={refTrybut}
+            ></div>
           </button>
           <button className={classes.butt} onClick={setImage}>
             عکس
-            <div className={classes.buttline} style={{display:'block'}} useRef={refImagebut}></div>
+            <div
+              className={classes.buttline}
+              style={{ display: "block" }}
+              useRef={refImagebut}
+            ></div>
           </button>
         </div>
         <img
           id="image"
           ref={refImage}
-          src={array.image}
+          // src={Data.image}
+          src={"http://127.0.0.1:8000/store/store/images/" + Data.image + '.jpg'}
           className={classes.image}
           alt="glassImage"
-          style={{display:'block'}}
+          style={{ display: "block" }}
         />
-        <div className={classes.try} style={{display:'none'}}>
+        <div className={classes.try} style={{ display: "none" }}>
           <Tryon ref={refTry} />
         </div>
         <div className={classes.info}>
@@ -102,12 +111,12 @@ const GlassPage = (props) => {
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{array.name}</h1>
-              <h1>{array.brand}</h1>
-              <h1>{array.sex}</h1>
-              <h1>{array.color}</h1>
+              <h1>{Data.name}</h1>
+              <h1>{Data.brand}</h1>
+              <h1>{Data.sex}</h1>
+              <h1>{Data.color}</h1>
               <h1>دستمال، جعبه</h1>
-              <h1>{array.price}</h1>
+              <h1>{Data.price}</h1>
             </div>
             <img
               src={glassline}
@@ -129,11 +138,11 @@ const GlassPage = (props) => {
           </button>
         </div>
       </div>
-      <div className={classes.newest}>
+      {/* <div className={classes.newest}>
         <h1 className={classes.new_text}>پیشنهادی بر اساس انتخاب شما</h1>
         <div className={classes.line}></div>
-        <GlassMini array={newest} />
-      </div>
+        <GlassMini array={Data.recom} />
+      </div> */}
     </div>
   );
 };

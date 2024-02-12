@@ -4,12 +4,12 @@ import json
 import os
 import shutil
 
-df = pd.read_csv('glassesSKU.csv')
+#df = pd.read_csv('glassesSKU.csv')
 
 counter = 0
+arr = ['empty']
 
-
-for i in df['SKU'][200:]:
+for i in arr:
 
     counter += 1
     print(counter)

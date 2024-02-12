@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-import { JEELIZVTOWIDGET } from "jeelizvtowidget";
+import { JEELIZVTOWIDGET } from "./JeelizVTOWidget.module.js";
 import classes from "./Tryon.module.css";
 import searchImage from "../../assets/glass1.png";
 
@@ -115,7 +115,7 @@ function AppCanvas(props) {
       <div ref={refChangeModel} className={classes.butt}>
         <button
           className="JeelizVTOWidgetButton"
-          onClick={set_glassesModel.bind(this, "rayban_aviator_or_vertFlash")}
+          onClick={set_glassesModel.bind(this, "aliexpress_cateye01_black_blue")}
         >
           Model 1
         </button>
@@ -123,14 +123,14 @@ function AppCanvas(props) {
           className="JeelizVTOWidgetButton"
           onClick={set_glassesModel.bind(
             this,
-            "rayban_round_cuivre_pinkBrownDegrade"
+            "aliexpress_cateye01_black_blue"
           )}
         >
           Model 2
         </button>
         <button
           className="JeelizVTOWidgetButton"
-          onClick={set_glassesModel.bind(this, "carrera_113S_blue")}
+          onClick={set_glassesModel.bind(this, "blaze_hexagonal_bleu_orangemiroir")}
         >
           Model 3
         </button>

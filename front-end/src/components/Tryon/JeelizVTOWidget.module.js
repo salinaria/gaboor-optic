@@ -1643,7 +1643,7 @@ var JeelizVTOWidget = (function () {
                 updateLightInterval: 3,
                 overSamplingFactor: 2,
                 modelSKU: "undef",
-                glassesDBURL: "https://glassesdbcached.jeeliz.com/sku/",
+                glassesDBURL: "http://127.0.0.1:8000/store/store/sku/",
                 isMask: !0,
               },
               K
@@ -14268,8 +14268,8 @@ var JeelizVTOWidget = (function () {
       return V;
     })(),
     Kb = {
-      glassesDBURL: "https://glassesdbcached.jeeliz.com/sku/",
-      appstaticURL: "https://appstatic.jeeliz.com/",
+      glassesDBURL: "http://127.0.0.1:8000/store/store/sku/",
+      appstaticURL: "http://127.0.0.1:8000/store/store/",
       autoVTOURL: "https://autovtoapi.jeeliz.com/",
       assetsPath: "jeefit/",
     },
