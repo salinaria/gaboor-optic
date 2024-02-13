@@ -7,32 +7,18 @@ import GlassMini from "../Miniglass/Miniglass";
 import Tryon from "../Tryon/Tryon";
 import axios from "axios";
 import React, { useRef, useState, useEffect } from "react";
+import Popup from 'reactjs-popup';
 import { useParams } from "react-router";
+
+function setTry(){
+
+}
 
 const GlassPage = (props) => {
   let slug = useParams();
   let requestOptions;
-  const refImage = useRef();
-  const refTry = useRef();
-  const refTrybut = useRef();
-  const refImagebut = useRef();
   const [isWish, setWish] = useState("not found");
 
-  function setImage() {
-    refImage.current.style.display = "block";
-    refTry.current.style.display = "none";
-    refImagebut.current.style.display = "block";
-    refTrybut.current.style.display = "none";
-  }
-
-  function setTry() {
-    console.log("hi");
-    console.log(refTry.current);
-    refTry.current.style.display = "block";
-    refImage.current.style.display = "none";
-    refImagebut.current.style.display = "block";
-    refTrybut.current.style.display = "none";
-  }
   const currentUser = () => {
     return JSON.parse(localStorage.getItem("currentUser"));
   };
@@ -73,36 +59,35 @@ const GlassPage = (props) => {
         !با استفاده از واقعیت مجازی، عینک را روی صورت خود ببینید و بعد انتخاب
         کنید
       </p>
+      <Popup className={classes.popcont} trigger=
+                {<button> Click to open modal </button>} 
+                modal nested>
+                {
+                    close => (
+                        <div className={classes.popcont}>
+                            <div className={classes.pop}>
+                              <Tryon id = {Data.sku_id}/>
+                            </div>
+                            <div>
+                                <button onClick=
+                                    {() => close()}>
+                                        Close modal
+                                </button>
+                            </div>
+                        </div>
+                    )
+                }
+            </Popup>
       <div className={classes.container}>
-        <div className={classes.butcont}>
-          <button className={classes.butt} onClick={setTry}>
-            امتحان روی صورت
-            <div
-              className={classes.buttline}
-              style={{ display: "none" }}
-              useRef={refTrybut}
-            ></div>
-          </button>
-          <button className={classes.butt} onClick={setImage}>
-            عکس
-            <div
-              className={classes.buttline}
-              style={{ display: "block" }}
-              useRef={refImagebut}
-            ></div>
-          </button>
-        </div>
         <img
           id="image"
-          ref={refImage}
-          src={"http://127.0.0.1:8000/store/store/images/" + Data.sku_id + '.jpg'}
+          src={
+            "http://127.0.0.1:8000/store/store/images/" + Data.sku_id + ".jpg"
+          }
           className={classes.image}
           alt="glassImage"
           style={{ display: "block" }}
         />
-        {/* <div className={classes.try} style={{ display: "none" }}>
-          <Tryon ref={refTry} />
-        </div> */}
         <div className={classes.info}>
           <div className={classes.title}>
             <img src={close} alt="close" />
@@ -111,7 +96,7 @@ const GlassPage = (props) => {
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{Data.name.substring(0, 25)+"..."}</h1>
+              <h1>{Data.name.substring(0, 25) + "..."}</h1>
               <h1>{Data.brand}</h1>
               <h1>{Data.sex}</h1>
               <h1>{Data.color}</h1>

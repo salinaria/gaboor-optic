@@ -25,15 +25,19 @@ p {
   background-color: red;
   margin-top: 15px;
 }
+
+.popcont{
+  width: 60vw;
+  height: 500px;
+  background-color: #2c2c2c;
+}
+
 .image {
   grid-column: 1/2;
   display: grid;
   margin-right: 0;
   height: max-content;
   width: 100%;
-}
-.try {
-  display: none;
 }
 .info {
   padding: 3%;

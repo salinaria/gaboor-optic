@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { useParams } from "react-router";
 import { JEELIZVTOWIDGET } from "./JeelizVTOWidget.module.js";
 import classes from "./Tryon.module.css";
 import searchImage from "../../assets/glass1.png";
@@ -50,65 +49,26 @@ function init_VTOWidget(placeHolder, canvas, toggle_loading, id) {
 }
 
 function AppCanvas(props) {
-  let slug = useParams();
   const refPlaceHolder = useRef();
   const refCanvas = useRef();
-  const refAdjustEnter = useRef();
-  const refAdjust = useRef();
-  const refChangeModel = useRef();
   const refLoading = useRef();
 
   const toggle_loading = (isLoadingVisible) => {
     refLoading.current.style.display = isLoadingVisible ? "block" : "none";
   };
 
-  const enter_adjustMode = () => {
-    JEELIZVTOWIDGET.enter_adjustMode();
-    refAdjustEnter.current.style.display = "none";
-    refAdjust.current.style.display = "block";
-    refChangeModel.current.style.display = "none";
-  };
-
-  const exit_adjustMode = () => {
-    JEELIZVTOWIDGET.exit_adjustMode();
-    refAdjustEnter.current.style.display = "block";
-    refAdjust.current.style.display = "none";
-    refChangeModel.current.style.display = "block";
-  };
-
-  const set_glassesModel = (sku) => {
-    JEELIZVTOWIDGET.load(sku);
-  };
-
   useEffect(() => {
     const placeHolder = refPlaceHolder.current;
     const canvas = refCanvas.current;
-    init_VTOWidget(placeHolder, canvas, toggle_loading, slug.id);
+    init_VTOWidget(placeHolder, canvas, toggle_loading, props.id);
+    return () => {
+      JEELIZVTOWIDGET.destroy();
+    };
   }, []);
 
   return (
     <div ref={refPlaceHolder} className={classes.container}>
       <canvas ref={refCanvas} className={classes.try}></canvas>
-
-       <div ref={refAdjustEnter} className="JeelizVTOWidgetControls">
-        <button
-          className="JeelizVTOWidgetButton JeelizVTOWidgetAdjustEnterButton"
-          onClick={enter_adjustMode}
-        >
-          Adjust
-        </button>
-      </div>
-
-      <div ref={refAdjust} className="JeelizVTOWidgetAdjustNotice">
-        Move the glasses to adjust them.
-        <button
-          className="JeelizVTOWidgetButton JeelizVTOWidgetAdjustExitButton"
-          onClick={exit_adjustMode}
-        >
-          Quit
-        </button>
-      </div>
-
       <div ref={refLoading} className="JeelizVTOWidgetLoading">
         <div className={classes.loading}>LOADING...</div>
       </div>
