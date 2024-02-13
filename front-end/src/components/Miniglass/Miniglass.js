@@ -9,7 +9,7 @@ const GlassMini = (props) => {
           <div className={classes.info}>
             <h1>{glass.name.substring(0, 15)}</h1>
             <h1>{glass.brand}</h1>
-            <h1>{glass.price}</h1>
+            <h1>{glass.price}00</h1>
           </div>
         </a>
       ))}

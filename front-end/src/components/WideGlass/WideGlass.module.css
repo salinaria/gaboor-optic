@@ -1,5 +1,6 @@
 .GlassMini {
   display: grid;
+  grid-template-columns: 25% 75%;
   direction: rtl;
   align-items: center;
   width: 100%;
@@ -10,7 +11,7 @@
 }
 .image {
   display: grid;
-  width: 30%;
+  width: 100%;
   grid-column: 1/2;
   border-radius: 10px;
 }

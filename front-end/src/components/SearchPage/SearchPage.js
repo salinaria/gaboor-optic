@@ -33,9 +33,11 @@ const SearchPage = () => {
       <h1 className={classes.find}>نتایج جستجوی</h1>
       <h1 className={classes.prompt}>{slug.search}</h1>
       <div className={classes.line}></div>
-      {Data.map((glass, index) => (
-        <WideGlass array={glass} />
-      ))}
+      <div className={classes.results}>
+        {Data.map((glass, index) => (
+          <WideGlass array={glass} />
+        ))}
+      </div>
     </div>
   );
 };

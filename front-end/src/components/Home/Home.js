@@ -34,13 +34,13 @@ const newest = [
 ];
 const ferrari = [
   {
-    id: 89,
-    name: "Rayban Ferrari Black Grey",
-    sku_id: "rayban_ferrari_gris_noir_gris_mirror_chromance",
+    id: 101,
+    name: "Rayban Ferrari Bleu",
+    sku_id: "rayban_ferrari_blue_bleu_mirror_chromance",
     brand: "RayBan",
-    price: 3.8,
-    sex: "مردانه",
-    color: "مشکی",
+    price: 1.0,
+    sex: "هردو",
+    color: "آبی"
   },
   {
     id: 97,
@@ -66,7 +66,10 @@ const Home = () => {
     <div>
       <Navbar />
 
-      <a href="/glass/rayban_clubmasterFleck_havaneNoir_vert" className={classes.slide}>
+      <a
+        href="/glass/rayban_clubmasterFleck_havaneNoir_vert"
+        className={classes.slide}
+      >
         <img className={classes.slide_img} src={slide1} alt="slide" />
       </a>
       <div className={classes.newest}>
@@ -75,7 +78,9 @@ const Home = () => {
         <GlassMini array={newest} />
       </div>
       <div className={classes.newest}>
-        <h1 className={classes.new_text}>کالکشن فراری، ری-بن همکاری بهترین ها</h1>
+        <h1 className={classes.new_text}>
+          کالکشن فراری، ری-بن همکاری بهترین ها
+        </h1>
         <div className={classes.line}></div>
         <GlassMini array={ferrari} />
       </div>

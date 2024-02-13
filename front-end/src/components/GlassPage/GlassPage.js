@@ -111,12 +111,12 @@ const GlassPage = (props) => {
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{Data.name.substring(0, 30)+"..."}</h1>
+              <h1>{Data.name.substring(0, 25)+"..."}</h1>
               <h1>{Data.brand}</h1>
               <h1>{Data.sex}</h1>
               <h1>{Data.color}</h1>
               <h1>دستمال، جعبه</h1>
-              <h1>{Data.price}</h1>
+              <h1>{Data.price}00.000</h1>
             </div>
             <img
               src={glassline}
