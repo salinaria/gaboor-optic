@@ -52,7 +52,7 @@ const GlassPage = (props) => {
     sex: "",
     price: 0,
     color: "",
-    recom: [],
+    recommended: [],
   });
 
   useEffect(() => {
@@ -62,6 +62,7 @@ const GlassPage = (props) => {
     axios
       .get("http://127.0.0.1:8000/api/movie/" + String(slug.id))
       .then((response) => setData(response.data))
+      .then()
       .catch(console.log(""));
   }, []);
 
@@ -94,15 +95,14 @@ const GlassPage = (props) => {
         <img
           id="image"
           ref={refImage}
-          // src={Data.image}
-          src={"http://127.0.0.1:8000/store/store/images/" + Data.image + '.jpg'}
+          src={"http://127.0.0.1:8000/store/store/images/" + Data.sku_id + '.jpg'}
           className={classes.image}
           alt="glassImage"
           style={{ display: "block" }}
         />
-        <div className={classes.try} style={{ display: "none" }}>
+        {/* <div className={classes.try} style={{ display: "none" }}>
           <Tryon ref={refTry} />
-        </div>
+        </div> */}
         <div className={classes.info}>
           <div className={classes.title}>
             <img src={close} alt="close" />
@@ -111,7 +111,7 @@ const GlassPage = (props) => {
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{Data.name}</h1>
+              <h1>{Data.name.substring(0, 30)+"..."}</h1>
               <h1>{Data.brand}</h1>
               <h1>{Data.sex}</h1>
               <h1>{Data.color}</h1>
@@ -138,11 +138,11 @@ const GlassPage = (props) => {
           </button>
         </div>
       </div>
-      {/* <div className={classes.newest}>
+      <div className={classes.newest}>
         <h1 className={classes.new_text}>پیشنهادی بر اساس انتخاب شما</h1>
         <div className={classes.line}></div>
-        <GlassMini array={Data.recom} />
-      </div> */}
+        <GlassMini array={Data.recommended} />
+      </div>
     </div>
   );
 };

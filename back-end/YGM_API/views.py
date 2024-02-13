@@ -42,6 +42,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     serializer_class=serializers.MovieSerializer
     queryset=models.Movie.objects.all()
     filter_backends=(filters.SearchFilter,)
+    lookup_field="sku_id"
     search_fields=('name','brand','sex','color')
 
 

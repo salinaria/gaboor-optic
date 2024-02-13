@@ -40,26 +40,15 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     
 
 class Movie(models.Model):
-    name = models.CharField(max_length=128,unique=False)
+    name = models.CharField(max_length=512,unique=False)
     sku_id = models.CharField(max_length=512,unique=True)
     brand = models.CharField(max_length=64,unique=False)
     price = models.FloatField(default=0)
-    sex=models.IntegerField(default=0)
+    sex=models.CharField(max_length=32,default="هردو")
     color = models.CharField(max_length=64,unique=False)
-    # image = models.FilePathField(path=os.path.join(settings.LOCAL_FILE_DIR,"images"))
-    image=models.CharField(max_length=712,unique=False)
-    # sku_file=models.FileField(upload_to="store/sku/")
-    # plastic=models.FileField(upload_to="store/materials/plastic/",blank=True)
-    # model3d=models.FileField(upload_to="store/models3D/",blank=True)
-    # metal=models.FileField(upload_to="store/materials/metals/",blank=True)
-    # glass=models.FileField(upload_to="store/materials/glasses/",blank=True)
     def __str__(self):
         return self.name
 
-# class Files(models.Model):
-#     image=models.FileField(upload_to='store/images/')
-#     def __str__(self):
-#         return self.image
 
 class WatchListItem(models.Model):
     user_profile=models.ForeignKey(

@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
-
+import { useParams } from "react-router";
 import { JEELIZVTOWIDGET } from "./JeelizVTOWidget.module.js";
 import classes from "./Tryon.module.css";
 import searchImage from "../../assets/glass1.png";
 
-function init_VTOWidget(placeHolder, canvas, toggle_loading) {
+function init_VTOWidget(placeHolder, canvas, toggle_loading, id) {
   JEELIZVTOWIDGET.start({
     placeHolder,
     canvas,
@@ -14,7 +14,7 @@ function init_VTOWidget(placeHolder, canvas, toggle_loading) {
       LOADING_START: toggle_loading.bind(null, true),
       LOADING_END: toggle_loading.bind(null, false),
     },
-    sku: "empty", // SKU loadded at the beginning
+    sku: id, // SKU loadded at the beginning
     // image displayed when face is not found:
     searchImageMask: searchImage, //'https://appstatic.jeeliz.com/jeewidget/images/target.png',
     searchImageColor: 0xeeeeee, // color of loading (face not found) animation
@@ -50,6 +50,7 @@ function init_VTOWidget(placeHolder, canvas, toggle_loading) {
 }
 
 function AppCanvas(props) {
+  let slug = useParams();
   const refPlaceHolder = useRef();
   const refCanvas = useRef();
   const refAdjustEnter = useRef();
@@ -82,18 +83,14 @@ function AppCanvas(props) {
   useEffect(() => {
     const placeHolder = refPlaceHolder.current;
     const canvas = refCanvas.current;
-    init_VTOWidget(placeHolder, canvas, toggle_loading);
-
-    return () => {
-      JEELIZVTOWIDGET.destroy();
-    };
+    init_VTOWidget(placeHolder, canvas, toggle_loading, slug.id);
   }, []);
 
   return (
     <div ref={refPlaceHolder} className={classes.container}>
       <canvas ref={refCanvas} className={classes.try}></canvas>
 
-      <div ref={refAdjustEnter} className="JeelizVTOWidgetControls">
+       <div ref={refAdjustEnter} className="JeelizVTOWidgetControls">
         <button
           className="JeelizVTOWidgetButton JeelizVTOWidgetAdjustEnterButton"
           onClick={enter_adjustMode}
@@ -109,30 +106,6 @@ function AppCanvas(props) {
           onClick={exit_adjustMode}
         >
           Quit
-        </button>
-      </div>
-
-      <div ref={refChangeModel} className={classes.butt}>
-        <button
-          className="JeelizVTOWidgetButton"
-          onClick={set_glassesModel.bind(this, "aliexpress_cateye01_black_blue")}
-        >
-          Model 1
-        </button>
-        <button
-          className="JeelizVTOWidgetButton"
-          onClick={set_glassesModel.bind(
-            this,
-            "aliexpress_cateye01_black_blue"
-          )}
-        >
-          Model 2
-        </button>
-        <button
-          className="JeelizVTOWidgetButton"
-          onClick={set_glassesModel.bind(this, "blaze_hexagonal_bleu_orangemiroir")}
-        >
-          Model 3
         </button>
       </div>
 

@@ -1,28 +1,83 @@
 import Navbar from "../Navbar/Navbar";
 import classes from "../Home/Home.module.css";
 import slide1 from "../../assets/slide1.png";
-import glass1 from "../../assets/glass1.png";
-import glass2 from "../../assets/glass2.png";
-import glass3 from "../../assets/glass3.png";
 import GlassMini from "../Miniglass/Miniglass";
 
 const newest = [
-  { image: glass1, name: "Aviator", brand: "Ray Ban", price: "1,400", link:'/glass/aviator' },
-  { image: glass2, name: "Aviator", brand: "Ray Ban", price: "1,300", link:'/glass/aviator' },
-  { image: glass3, name: "Aviator", brand: "Ray Ban", price: "1,800", link:'/glass/aviator' },
+  {
+    id: 143,
+    name: "Oakley Catalyst Black Red 9272 07",
+    sku_id: "catalyst_black_red",
+    price: 1.0,
+    brand: "Oakley",
+    sex: "هردو",
+    color: "قرمز",
+  },
+  {
+    id: 121,
+    name: "Carrera 119/S Blue Grey T6M HD",
+    sku_id: "carrera_119S_blue_gray_gradient",
+    brand: "Carrera",
+    price: 1.5,
+    sex: "زنانه",
+    color: "آبی",
+  },
+  {
+    id: 10,
+    name: "Ray-Ban Cockpit Sunglasses RB3362 001-56 - Arista Frame  Crystal Green",
+    sku_id: "rayban_cockpit_or_vert_classique",
+    price: 1.2,
+    brand: "RayBan",
+    sex: "مردانه",
+    color: "سبز",
+  },
+];
+const ferrari = [
+  {
+    id: 89,
+    name: "Rayban Ferrari Black Grey",
+    sku_id: "rayban_ferrari_gris_noir_gris_mirror_chromance",
+    brand: "RayBan",
+    price: 3.8,
+    sex: "مردانه",
+    color: "مشکی",
+  },
+  {
+    id: 97,
+    name: "Rayban Ferrari Black Silver",
+    sku_id: "rayban_ferrari_noir_argent_mirror_chromance",
+    brand: "RayBan",
+    price: 1.6,
+    sex: "مردانه",
+    color: "طوسی",
+  },
+  {
+    id: 106,
+    name: "Rayban Ferrari Black Gold",
+    sku_id: "rayban_ferrari_noir_or_mirror_chromance",
+    brand: "RayBan",
+    price: 3.3,
+    sex: "مردانه",
+    color: "مشکی",
+  },
 ];
 const Home = () => {
   return (
     <div>
       <Navbar />
 
-      <a href="/glass/mega" className={classes.slide}>
+      <a href="/glass/rayban_clubmasterFleck_havaneNoir_vert" className={classes.slide}>
         <img className={classes.slide_img} src={slide1} alt="slide" />
       </a>
       <div className={classes.newest}>
         <h1 className={classes.new_text}>جدیدترین عینک‌ها</h1>
         <div className={classes.line}></div>
         <GlassMini array={newest} />
+      </div>
+      <div className={classes.newest}>
+        <h1 className={classes.new_text}>کالکشن فراری، ری-بن همکاری بهترین ها</h1>
+        <div className={classes.line}></div>
+        <GlassMini array={ferrari} />
       </div>
     </div>
   );

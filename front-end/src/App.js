@@ -20,7 +20,7 @@ function App() {
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/glass/:id" element={<GlassPage />} />
-        <Route path="/tryon" element={<Tryon />} />
+        <Route path="/tryon/:id" element={<Tryon />} />
       </Routes>
     </BrowserRouter>
   );

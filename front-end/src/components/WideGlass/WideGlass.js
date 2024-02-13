@@ -3,10 +3,10 @@ import classes from "../WideGlass/WideGlass.module.css";
 const WideGlass = (props) => {
   return (
     <div className={classes.GlassMini}>
-      <a href={props.array.link} className={classes.link}>
+      <a href={'http://localhost:3000/glass/'+props.array.sku_id} className={classes.link}>
         <img
           id="image"
-          src={props.array.image}
+          src={"http://127.0.0.1:8000/store/store/images/" + props.array.sku_id + '.jpg'}
           className={classes.image}
           alt="glassImage"
         />

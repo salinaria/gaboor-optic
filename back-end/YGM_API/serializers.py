@@ -4,6 +4,7 @@ from rest_framework import serializers
 from django.core.files import File
 from YGM_API import models
 
+
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializes a user profile object"""
     
@@ -31,18 +32,12 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Movie
-        fields=('name',
+        fields=('id','name',
             'sku_id',
             'brand',
             'price',
             'sex',
-            'color',
-            'image',)
-            # 'sku_file',
-            # 'plastic',
-            # 'model3d',
-            # 'metal',
-            # 'glass')
+            'color',)
 
     def to_representation(self, instance):
         rep = super().to_representation(instance)
@@ -51,7 +46,37 @@ class MovieSerializer(serializers.ModelSerializer):
         for ii in range(1,len(tmp)):
             final_string+=" , "+tmp[ii].name
         # f=open(tmp[0].image)
-        # rep["cast"]=File(f)
+        similars=models.Movie.objects.filter(color=tmp[0].color) | models.Movie.objects.filter(color=tmp[0].color,sex="هردو")
+        similars=similars.exclude(id=tmp[0].id)
+        # print(similars)
+        # rep["recommended"]=str(similars[0].sku_id)+","+str(similars[1].sku_id)+","+str(similars[2].sku_id)
+        
+        d1={}
+        d2={}
+        d3={}
+        d1["id"]=similars[0].id
+        d1["name"]=similars[0].name
+        d1["sku_id"]=similars[0].sku_id
+        d1["price"]=similars[0].price
+        d1["brand"]=similars[0].brand
+        d1["sex"]=similars[0].sex
+        d1["color"]=similars[0].color
+        d2["id"]=similars[1].id
+        d2["name"]=similars[1].name
+        d2["sku_id"]=similars[1].sku_id
+        d2["price"]=similars[1].price
+        d2["brand"]=similars[1].brand
+        d2["sex"]=similars[1].sex
+        d2["color"]=similars[1].color
+        d3["id"]=similars[2].id
+        d3["name"]=similars[2].name
+        d3["sku_id"]=similars[2].sku_id
+        d3["price"]=similars[2].price
+        d3["brand"]=similars[2].brand
+        d3["sex"]=similars[2].sex
+        d3["color"]=similars[2].color
+                
+        rep["recommended"]=[d1,d2,d3]
         return rep
 
 

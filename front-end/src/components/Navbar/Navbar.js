@@ -35,8 +35,8 @@ const Navbar = () => {
             <a href="/search/Ray%20Ban" className={classes.col}>
               Ray Ban
             </a>
-            <a href="/search/Correra" className={classes.col}>
-              Correra
+            <a href="/search/Carrera" className={classes.col}>
+              Carrera
             </a>
             <a href="/search/Oakley" className={classes.col}>
               Oakley
