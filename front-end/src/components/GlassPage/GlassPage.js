@@ -7,18 +7,12 @@ import GlassMini from "../Miniglass/Miniglass";
 import Tryon from "../Tryon/Tryon";
 import axios from "axios";
 import React, { useRef, useState, useEffect } from "react";
-import Popup from 'reactjs-popup';
 import { useParams } from "react-router";
-
-function setTry(){
-
-}
 
 const GlassPage = (props) => {
   let slug = useParams();
   let requestOptions;
   const [isWish, setWish] = useState("not found");
-
   const currentUser = () => {
     return JSON.parse(localStorage.getItem("currentUser"));
   };
@@ -51,7 +45,7 @@ const GlassPage = (props) => {
       .then()
       .catch(console.log(""));
   }, []);
-
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <Navbar />
@@ -59,35 +53,26 @@ const GlassPage = (props) => {
         !با استفاده از واقعیت مجازی، عینک را روی صورت خود ببینید و بعد انتخاب
         کنید
       </p>
-      <Popup className={classes.popcont} trigger=
-                {<button> Click to open modal </button>} 
-                modal nested>
-                {
-                    close => (
-                        <div className={classes.popcont}>
-                            <div className={classes.pop}>
-                              <Tryon id = {Data.sku_id}/>
-                            </div>
-                            <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Close modal
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-            </Popup>
+      <button onClick={() => setOpen(true)}> Click to Open Popup</button>
+      <button onClick={() => setOpen(false)}> Click to close Popup</button>
+
       <div className={classes.container}>
-        <img
-          id="image"
-          src={
-            "http://127.0.0.1:8000/store/store/images/" + Data.sku_id + ".jpg"
-          }
-          className={classes.image}
-          alt="glassImage"
-          style={{ display: "block" }}
-        />
+        <div className={classes.image}>
+          {open ? (
+            <Tryon id={Data.sku_id} />
+          ) : null}
+        </div>
+        {open ? null : (
+          <img
+            id="image"
+            src={
+              "http://127.0.0.1:8000/store/store/images/" + Data.sku_id + ".jpg"
+            }
+            className={classes.image}
+            alt="glassImage"
+            style={{ display: "block" }}
+          />
+        )}
         <div className={classes.info}>
           <div className={classes.title}>
             <img src={close} alt="close" />
