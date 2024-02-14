@@ -53,14 +53,20 @@ const GlassPage = (props) => {
         !با استفاده از واقعیت مجازی، عینک را روی صورت خود ببینید و بعد انتخاب
         کنید
       </p>
-      <button onClick={() => setOpen(true)}> Click to Open Popup</button>
-      <button onClick={() => setOpen(false)}> Click to close Popup</button>
+      <div className={classes.butcont}>
+        <button onClick={() => setOpen(true)} className={classes.butt}>
+          امتحان روی صورت
+          {open?(<div className={classes.buttline}></div>):null}
+        </button>
+        <button onClick={() => setOpen(false)} className={classes.butt}>
+          تصویر
+          {open?null:(<div className={classes.buttline}></div>)}
+        </button>
+      </div>
 
       <div className={classes.container}>
         <div className={classes.image}>
-          {open ? (
-            <Tryon id={Data.sku_id} />
-          ) : null}
+          {open ? <Tryon id={Data.sku_id} /> : null}
         </div>
         {open ? null : (
           <img
@@ -81,7 +87,7 @@ const GlassPage = (props) => {
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{Data.name.substring(0, 25) + "..."}</h1>
+              <h1>{Data.name.substring(0, 23)}</h1>
               <h1>{Data.brand}</h1>
               <h1>{Data.sex}</h1>
               <h1>{Data.color}</h1>

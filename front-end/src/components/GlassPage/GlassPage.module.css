@@ -9,7 +9,7 @@ p {
 }
 .butcont {
   margin-left: 15%;
-  margin-top: -45px;
+  margin-top: -60px;
 }
 .butt {
   background: none;
@@ -18,6 +18,8 @@ p {
   font-size: 16px;
   border: none;
   font-family: "IranSans";
+  margin-left: 30px;
+  height: 50px;
 }
 .buttline {
   width: 100%;
@@ -26,14 +28,12 @@ p {
   margin-top: 15px;
 }
 
-.trycont{
+.trycont {
   position: absolute;
   width: 100%;
   height: 50vw;
   z-index: 999;
 }
-
-
 
 .image {
   grid-column: 1/2;
@@ -139,13 +139,19 @@ p {
 }
 
 @media only screen and (max-width: 1200px) {
-  .comeon{
-    visibility: hidden;
+  .comeon {
+    width: 100%;
+    text-align: center;
+    height: 60px;
   }
-  .butcont{
-    display: flex;
-    margin-left: 0;
-    justify-content: center;
+  .butt{
+    height: 50px;
+  }
+  .butcont {
+    display: block;
+    margin-top: -20px;
+    width: 60%;
+    text-align: center;
   }
   .container {
     display: block;
@@ -171,19 +177,23 @@ p {
   }
 }
 @media only screen and (max-width: 600px) {
+  .comeon{
+    visibility: hidden;
+  }
+  .butcont{
+    margin-top: 0px;
+  }
   .image {
     width: 90%;
     margin-left: 5%;
     margin-top: 0px;
-  }
-  .butcont {
-    margin-top: 40px;
   }
   .info {
     width: 86%;
     padding: 2%;
     margin-left: 5%;
     padding-bottom: 30px;
+    font-size: 14px;
   }
   .autocont {
     margin-top: 0;
