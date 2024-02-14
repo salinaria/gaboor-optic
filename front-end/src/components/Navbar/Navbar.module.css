@@ -143,12 +143,11 @@
   font-size: 16px;
   padding: 5px;
   border: none;
-  background-color: #dfdfdf;
+  background-color: #e2e2e2;
 }
 .searchbox:focus{
   outline: none;
-  background-color:#666666;
-  color: white;
+  background-color:#ffffff;
 }
 .search {
   width: 30px;

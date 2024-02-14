@@ -1,6 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import classes from "../Home/Home.module.css";
 import slide1 from "../../assets/slide1.png";
+import slide2 from "../../assets/slide2.jpg";
 import GlassMini from "../Miniglass/Miniglass";
 
 const newest = [
@@ -40,7 +41,7 @@ const ferrari = [
     brand: "RayBan",
     price: 1.0,
     sex: "هردو",
-    color: "آبی"
+    color: "آبی",
   },
   {
     id: 97,
@@ -77,6 +78,13 @@ const Home = () => {
         <div className={classes.line}></div>
         <GlassMini array={newest} />
       </div>
+      <a
+        href="/glass/rayban_ferrari_noir_vert_classique"
+        className={classes.slide2}
+      >
+        <img className={classes.slide_img} src={slide2} alt="slide" />
+      </a>
+
       <div className={classes.newest}>
         <h1 className={classes.new_text}>
           کالکشن فراری، ری-بن همکاری بهترین ها
