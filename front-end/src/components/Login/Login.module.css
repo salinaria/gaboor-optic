@@ -61,7 +61,7 @@ input:-webkit-autofill:active {
   background-color: #DB0000;
 }
 
-.signin{
+.Signup{
   text-decoration: none;
   color: #DB0000;
   text-align: right;
@@ -69,7 +69,7 @@ input:-webkit-autofill:active {
   flex-direction: row-reverse;
   margin-top: -50px;
 }
-.signin img{
+.Signup img{
   width: 10px;
   margin-right: 10px;
 }

@@ -2,11 +2,38 @@ import classes from "../Login/Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import next from "../../assets/next.svg";
+import React, { useContext, useRef } from "react";
+import axios from "axios";
 
-const Signin = () => {
+const Signup = () => {
   const history = useNavigate();
-  function signin() {
-    history("/");
+  const input1 = useRef();
+  const input2 = useRef();
+  const input3 = useRef();
+  const input4 = useRef();
+
+  function signup() {
+    let flagReq = true;
+    console.log(input3.current.value);
+    if (input3.current.value === input4.current.value) {
+      return axios
+        .post("http://localhost:8000/api/profile/", {
+          username: input1.current.value,
+          email: input2.current.value,
+          password: input3.current.value,
+        })
+        .catch((err) => {
+          alert("This Email is already registered");
+          flagReq = false;
+        })
+        .then((flagReq) => {
+          if (flagReq) {
+            history.push("/Login");
+          }
+        });
+    } else {
+      alert("Passwords does'nt match");
+    }
   }
   return (
     <div>
@@ -16,6 +43,7 @@ const Signin = () => {
         <form className={classes.form}>
           <p>نام</p>
           <input
+            ref={input1}
             type="text"
             placeholder=""
             name="name"
@@ -23,6 +51,7 @@ const Signin = () => {
           />
           <p>ایمیل</p>
           <input
+            ref={input2}
             type="email"
             placeholder=""
             name="email"
@@ -30,6 +59,7 @@ const Signin = () => {
           />
           <p>رمز عبور</p>
           <input
+            ref={input3}
             type="password"
             placeholder=""
             name="password"
@@ -37,17 +67,18 @@ const Signin = () => {
           />
           <p>تکرار رمز عبور</p>
           <input
+            ref={input4}
             type="password"
             placeholder=""
             name="re-password"
             className={classes.box}
           />
 
-          <button type="submit" onClick={signin} className={classes.btn}>
+          <button onClick={signup} className={classes.btn}>
             ساخت حساب
           </button>
         </form>
-        <a href="/Login" className={classes.signin}>
+        <a href="/Login" className={classes.Signup}>
           <p>حساب دارم! ورود</p>
           <img src={next} alt="Login" />
         </a>
@@ -56,4 +87,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

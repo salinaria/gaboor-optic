@@ -80,7 +80,7 @@ const Home = () => {
       </div>
       <a
         href="/glass/rayban_ferrari_noir_vert_classique"
-        className={classes.slide2}
+        className={classes.slide}
       >
         <img className={classes.slide_img} src={slide2} alt="slide" />
       </a>

@@ -61,7 +61,7 @@
     background-color: #DB0000;
   }
 
-  .signin{
+  .Signup{
     text-decoration: none;
     color: #DB0000;
     text-align: right;
@@ -70,7 +70,7 @@
     margin-top: -50px;
     width: 50%;
   }
-  .signin img{
+  .Signup img{
     width: 10px;
     margin-right: 10px;
   }
