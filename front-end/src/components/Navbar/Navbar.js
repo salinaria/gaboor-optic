@@ -12,6 +12,9 @@ const Navbar = () => {
   function goSearch() {
     history("/search/" + inputSearch.current.value);
   }
+  const currentUser = () => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  };
 
   return (
     <div className={classes.navbar}>
@@ -20,7 +23,7 @@ const Navbar = () => {
           <img src={basket} className={classes.basket} alt="icon" />
         </a>
         <div className={classes.hr} />
-        <a href="/Login" className={classes.bas}>
+        <a href={currentUser()?"/UserPage":"/Login"} className={classes.bas}>
           <img src={user} className={classes.user} alt="icon" />
         </a>
       </div>

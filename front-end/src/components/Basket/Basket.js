@@ -1,55 +1,60 @@
 import Navbar from "../Navbar/Navbar";
 import classes from "../Basket/Basket.module.css";
-import glass1 from "../../assets/glass1.png";
-import glass2 from "../../assets/glass2.png";
-import glass3 from "../../assets/glass3.png";
 import WideGlass from "../WideGlass/WideGlass";
 import blob from "../../assets/blob.svg";
-
-const newest = [
-  {
-    image: glass1,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "۱.۴۰۰.۰۰۰",
-    link: "/glass/aviator",
-  },
-  {
-    image: glass2,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "۱.۳۰۰.۰۰۰",
-    link: "/glass/aviator",
-  },
-  {
-    image: glass3,
-    name: "Aviator",
-    brand: "Ray Ban",
-    price: "۱.۸۰۰.۰۰۰",
-    link: "/glass/aviator",
-  },
-];
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 const Basket = () => {
+  const [Data, setData] = useState([
+    {
+      sku_id: "",
+      name: "",
+      image: "",
+      brand: "",
+      sex: "",
+      price: 0,
+      color: "",
+      recommended: [],
+    },
+  ]);
+
+  const currentUser = () => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  };
+  const customHeader = () => ({
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Token " + currentUser().token,
+    },
+    validateStatus: (status) => status === 200,
+  });
+
+  useEffect(() => {
+    const requestOptions = customHeader();
+    axios
+      .get("http://127.0.0.1:8000/api/watchlist/", requestOptions)
+      .then((response) => setData(Object.values(response.data)));
+  }, []);
+
   return (
     <div>
       <Navbar />
-      
+
       <div className={classes.container}>
         <h1 className={classes.find}>سبد خرید من</h1>
         <div className={classes.line}></div>
         <div className={classes.items}>
-          {newest.map((glass, index) => (
-            <WideGlass array={glass} basket = {true} />
+          {Data.map((glass, index) => (
+            <WideGlass array={glass} basket={true} />
           ))}
         </div>
       </div>
 
-
       <img src={blob} alt="blob" className={classes.blob} />
       <div className={classes.sum}>
         <p className={classes.title}>جمع خرید من</p>
-        {newest.map((glass, index) => (
+        {Data.map((glass, index) => (
           <p className={classes.numbers}>{glass.price}</p>
         ))}
         <p className={classes.discount0}>۰</p>

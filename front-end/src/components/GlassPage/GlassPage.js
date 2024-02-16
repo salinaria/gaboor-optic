@@ -5,17 +5,19 @@ import cart_add from "../../assets/cart-add.svg";
 import close from "../../assets/close.svg";
 import GlassMini from "../Miniglass/Miniglass";
 import Tryon from "../Tryon/Tryon";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
 const GlassPage = (props) => {
   let slug = useParams();
+  const history = useNavigate();
 
   const currentUser = () => {
     return JSON.parse(localStorage.getItem("currentUser"));
   };
-  
+
   const customHeader = () => ({
     headers: {
       "content-type": "application/json",
@@ -36,17 +38,23 @@ const GlassPage = (props) => {
 
   function addBasket() {
     const requestOptions = customHeader();
-    axios.post(
-      "http://127.0.0.1:8000/api/watchlist/",
-      { movie_saved_to_watch: Data.sku_id },
-      requestOptions
-    );
+    axios
+      .post(
+        "http://127.0.0.1:8000/api/watchlist/",
+        { movie_saved_to_watch: Data.sku_id },
+        requestOptions
+      )
+      .then((flagReq) => {
+        if (flagReq) {
+          history("/basket");
+        }
+      });
   }
 
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/movie/" + String(slug.id))
-      .then((response) => setData(response.data))
+      .then((response) => setData(response.data));
   }, []);
   const [open, setOpen] = useState(false);
   return (
