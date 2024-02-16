@@ -34,15 +34,18 @@ const Basket = () => {
   return (
     <div>
       <Navbar />
+      
       <div className={classes.container}>
         <h1 className={classes.find}>سبد خرید من</h1>
         <div className={classes.line}></div>
         <div className={classes.items}>
           {newest.map((glass, index) => (
-            <WideGlass array={glass} />
+            <WideGlass array={glass} basket = {true} />
           ))}
         </div>
       </div>
+
+
       <img src={blob} alt="blob" className={classes.blob} />
       <div className={classes.sum}>
         <p className={classes.title}>جمع خرید من</p>

@@ -1,10 +1,9 @@
 import classes from "../Login/Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import next from '../../assets/next.svg'
-import React, { useContext, useRef } from "react";
+import next from "../../assets/next.svg";
+import React, { useRef } from "react";
 import axios from "axios";
-
 
 const Login = () => {
   const history = useNavigate();
@@ -14,15 +13,14 @@ const Login = () => {
   function login() {
     return axios
       .post("http://localhost:8000/api/login/", {
-        email: input1.current.value,
+        username: input1.current.value,
         password: input2.current.value,
       })
       .then((user) => {
-        alert('Login successfully');
         localStorage.setItem("currentUser", JSON.stringify(user.data));
+        history('/')
         return user;
       })
-      .then((res) => history.push("/"))
       .catch((err) => {
         alert("Invalid Username or Password");
       });
@@ -33,18 +31,18 @@ const Login = () => {
       <Navbar />
       <div className={classes.container}>
         <p className={classes.title}>ورود</p>
-        <form className={classes.form}>
+        <div className={classes.form}>
           <p>ایمیل</p>
           <input
-            ref = {input1}
-            type="email"
+            ref={input1}
+            type="name"
             placeholder=""
             name="email"
             className={classes.box}
           />
           <p>رمز عبور</p>
           <input
-            ref = {input2}
+            ref={input2}
             type="password"
             placeholder=""
             name="password"
@@ -54,10 +52,10 @@ const Login = () => {
           <button onClick={login} className={classes.btn}>
             ورود
           </button>
-        </form>
+        </div>
         <a href="/Signup" className={classes.Signup}>
           <p>ساخت حساب کاربری</p>
-          <img src = {next} alt="Signup"/>
+          <img src={next} alt="Signup" />
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import classes from "../SearchPage/SearchPage.module.css";
 import axios from "axios";
-import React, { useRef, useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import { useParams } from "react-router";
 import WideGlass from "../WideGlass/WideGlass";
 
@@ -17,7 +17,7 @@ const SearchPage = () => {
       sex: "",
       price: 0,
       color: "",
-      recommended: [],
+      recommended: [], 
     },
   ]);
 
@@ -35,7 +35,7 @@ const SearchPage = () => {
       <div className={classes.line}></div>
       <div className={classes.results}>
         {Data.map((glass, index) => (
-          <WideGlass array={glass} />
+          <WideGlass array={glass} basket = {false} />
         ))}
       </div>
     </div>

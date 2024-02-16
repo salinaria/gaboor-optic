@@ -27,11 +27,18 @@
   border: 3px solid #535353;
   direction: ltr;
   width: 70px;
+  border-radius: 10px;
+  height: 35px;
 }
 .delete p{
   font-size: 14px;
+  margin-right: 5px;
   margin-left: 10px;
   color: red;
+  margin-top: 7px;
+}
+.delete img{
+  width: 15px;
 }
 @media only screen and (max-width: 600px) {
   .image{

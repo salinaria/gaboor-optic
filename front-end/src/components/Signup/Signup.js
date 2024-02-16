@@ -2,7 +2,7 @@ import classes from "../Login/Login.module.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import next from "../../assets/next.svg";
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 
 const Signup = () => {
@@ -13,9 +13,8 @@ const Signup = () => {
   const input4 = useRef();
 
   function signup() {
-    let flagReq = true;
-    console.log(input3.current.value);
     if (input3.current.value === input4.current.value) {
+      let flagReq = true;
       return axios
         .post("http://localhost:8000/api/profile/", {
           username: input1.current.value,
@@ -28,7 +27,7 @@ const Signup = () => {
         })
         .then((flagReq) => {
           if (flagReq) {
-            history.push("/Login");
+            history("/Login");
           }
         });
     } else {
@@ -40,7 +39,7 @@ const Signup = () => {
       <Navbar />
       <div className={classes.container}>
         <p className={classes.title}>ثبت نام</p>
-        <form className={classes.form}>
+        <div className={classes.form}>
           <p>نام</p>
           <input
             ref={input1}
@@ -77,7 +76,7 @@ const Signup = () => {
           <button onClick={signup} className={classes.btn}>
             ساخت حساب
           </button>
-        </form>
+        </div>
         <a href="/Login" className={classes.Signup}>
           <p>حساب دارم! ورود</p>
           <img src={next} alt="Login" />

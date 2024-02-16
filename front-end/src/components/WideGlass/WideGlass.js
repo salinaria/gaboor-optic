@@ -23,10 +23,12 @@ const WideGlass = (props) => {
         <h1>{props.array.name.substring(0, 70)}</h1>
         <h1>{props.array.brand}</h1>
         <h1>{props.array.price}00</h1>
-        <div className={classes.delete}>
-          <p>حذف</p>
-          <img src={deleteImage} alt="delete" />
-        </div>
+        {props.basket ? (
+          <div className={classes.delete}>
+            <p>حذف</p>
+            <img src={deleteImage} alt="delete" />
+          </div>
+        ) : null}
       </div>
     </div>
   );

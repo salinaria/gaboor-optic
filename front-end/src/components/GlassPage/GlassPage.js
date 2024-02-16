@@ -6,17 +6,16 @@ import close from "../../assets/close.svg";
 import GlassMini from "../Miniglass/Miniglass";
 import Tryon from "../Tryon/Tryon";
 import axios from "axios";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
 const GlassPage = (props) => {
   let slug = useParams();
-  let requestOptions;
-  const [isWish, setWish] = useState("not found");
+
   const currentUser = () => {
     return JSON.parse(localStorage.getItem("currentUser"));
   };
-  const thisuser = currentUser();
+  
   const customHeader = () => ({
     headers: {
       "content-type": "application/json",
@@ -35,15 +34,19 @@ const GlassPage = (props) => {
     recommended: [],
   });
 
+  function addBasket() {
+    const requestOptions = customHeader();
+    axios.post(
+      "http://127.0.0.1:8000/api/watchlist/",
+      { movie_saved_to_watch: Data.sku_id },
+      requestOptions
+    );
+  }
+
   useEffect(() => {
-    if (thisuser != null) {
-      requestOptions = customHeader();
-    }
     axios
       .get("http://127.0.0.1:8000/api/movie/" + String(slug.id))
       .then((response) => setData(response.data))
-      .then()
-      .catch(console.log(""));
   }, []);
   const [open, setOpen] = useState(false);
   return (
@@ -56,11 +59,11 @@ const GlassPage = (props) => {
       <div className={classes.butcont}>
         <button onClick={() => setOpen(true)} className={classes.butt}>
           امتحان روی صورت
-          {open?(<div className={classes.buttline}></div>):null}
+          {open ? <div className={classes.buttline}></div> : null}
         </button>
         <button onClick={() => setOpen(false)} className={classes.butt}>
           تصویر
-          {open?null:(<div className={classes.buttline}></div>)}
+          {open ? null : <div className={classes.buttline}></div>}
         </button>
       </div>
 
@@ -108,7 +111,7 @@ const GlassPage = (props) => {
               <h1>قیمت</h1>
             </div>
           </div>
-          <button className={classes.button}>
+          <button className={classes.button} onClick={addBasket}>
             <img src={cart_add} alt="cart" />
             <p>افزودن به سبد خرید</p>
           </button>
