@@ -20,6 +20,18 @@
   grid-column: 2/2;
   text-align: left;
   font-size: 45px;
+  direction: ltr;
+}
+.delete{
+  display: flex;
+  border: 3px solid #535353;
+  direction: ltr;
+  width: 70px;
+}
+.delete p{
+  font-size: 14px;
+  margin-left: 10px;
+  color: red;
 }
 @media only screen and (max-width: 600px) {
   .image{
