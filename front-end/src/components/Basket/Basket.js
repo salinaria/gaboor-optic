@@ -4,10 +4,12 @@ import WideGlass from "../WideGlass/WideGlass";
 import blob from "../../assets/blob.svg";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import basket from "../../assets/basket.svg";
 
 function sum_price(Data) {
   let sum_price = 0;
   Data.map((glass, index) => (sum_price += glass.glass_details[0].price));
+  if ((sum_price * 100) % 10 != 0) sum_price = parseInt(sum_price * 100) / 100;
   return sum_price;
 }
 const Basket = () => {
@@ -53,7 +55,10 @@ const Basket = () => {
     <div>
       <Navbar />
       {Data.length === 0 ? (
-        <p>سبد خرید شما خالی است!</p>
+        <div className={classes.empty}>
+          <p>سبد خرید شما خالی است</p>
+          <img src={basket} alt="basket" />
+        </div>
       ) : (
         <div>
           <div className={classes.container}>
@@ -75,10 +80,13 @@ const Basket = () => {
                 {glass.glass_details[0].price}00.000
               </p>
             ))}
-            <p className={classes.discount0}>۰</p>
+            <p className={classes.discount0}>0</p>
             <p className={classes.discount}>تخفیف</p>
             <div className={classes.line2}></div>
-            <p className={classes.sumall}>{sum_price(Data)}00.000</p>
+            <p className={classes.sumall}>
+              {sum_price(Data)}
+              {(sum_price(Data) * 10) % 10 === 0 ? ".000.000" : "00.000"}{" "}
+            </p>
             <p className={classes.legend}>نهایی</p>
           </div>
         </div>
