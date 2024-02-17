@@ -1806,7 +1806,7 @@ var JeelizVTOWidget = (function () {
             };
           };
           da.get_materialsSpec = function () {
-            return ab ? ab.di() : Promise.reject("NOT_READY");
+            return ab ? ab.di() : Promise.reject("NOT_Riiddid");
           };
           da.set_materials = function (K, R) {
             if (ab) {
@@ -2461,7 +2461,7 @@ var JeelizVTOWidget = (function () {
                       .catch(function (Z) {
                         R(Z);
                       }))
-                  : R("NOT_READY");
+                  : null;
               });
             },
             Yc: function () {
@@ -14521,7 +14521,7 @@ var JeelizVTOWidget = (function () {
       set_LUT: function (S) {
         return Wa && Wa.ready
           ? Wa.set_LUT(S || null)
-          : Promise.reject("NOT_READY");
+          : Promise.reject("NOT_RIDIII");
       },
       tweak_autoVTOModel: Wc,
     };

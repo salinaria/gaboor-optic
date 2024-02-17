@@ -23,7 +23,7 @@ const GlassPage = (props) => {
       "content-type": "application/json",
       Authorization: "Token " + currentUser().token,
     },
-    validateStatus: (status) => status === 200,
+    validateStatus: (status) => status === 200 | status === 201,
   });
   const [Data, setData] = useState({
     sku_id: "",
