@@ -26,20 +26,20 @@ class UserProfileManager(BaseUserManager):
 
 class UserProfile(AbstractBaseUser,PermissionsMixin):
     email=models.EmailField(max_length=255,unique=True)
-    username=models.CharField(max_length=255,unique=True)
+    username=models.CharField(max_length=255,unique=False)
     is_active=models.BooleanField(default=True)
     is_staff=models.BooleanField(default=False)
 
     objects=UserProfileManager()
 
-    USERNAME_FIELD='username'
-    REQUIRED_FIELDS=['email']
+    USERNAME_FIELD='email'
+    REQUIRED_FIELDS=['username']
 
     def __str__(self):
         return self.username
     
 
-class Movie(models.Model):
+class Glass(models.Model):
     name = models.CharField(max_length=512,unique=False)
     sku_id = models.CharField(max_length=512,unique=True)
     brand = models.CharField(max_length=64,unique=False)
@@ -50,13 +50,13 @@ class Movie(models.Model):
         return self.name
 
 
-class WatchListItem(models.Model):
+class BasketListItem(models.Model):
     user_profile=models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    movie_saved_to_watch=models.ForeignKey(
-        Movie,
+    glass_saved_to_basket=models.ForeignKey(
+        Glass,
         on_delete=models.CASCADE
     )
 

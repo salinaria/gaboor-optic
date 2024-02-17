@@ -1,13 +1,13 @@
 import requests
 
 
-movie_api='http://localhost:8000/api/movie/'
+glass_api='http://localhost:8000/api/glass/'
 
 
 
-def add_movie(name,sku_id,brand,price,sex,color):
+def add_glass(name,sku_id,brand,price,sex,color):
 
-    movie_body={
+    glass_body={
         "name":name,    
         "sku_id":sku_id,
         "brand":brand,
@@ -15,7 +15,7 @@ def add_movie(name,sku_id,brand,price,sex,color):
         "sex":sex,
         "color":color,
     }
-    response=requests.post(movie_api,json=movie_body)
+    response=requests.post(glass_api,json=glass_body)
     return response.status_code
 
 
@@ -26,27 +26,25 @@ from tqdm import tqdm
 df=pd.read_excel("glassesSKU.xlsx")
 
 all_images=os.listdir("store/images/")
-
-def fill_movies():
+prices_list=list(set([i for i in range(11,40)])-set([10,20,30,40]))
+def fill_glasses():
     all_sent=True
     all_names=[]
     
     for i in tqdm(range(0,len(df))):
         if df["ID"][i]+".jpg" not in all_images:
             continue
-        status_code=add_movie(df["Name"][i],df["ID"][i],df["Brand"][i],random.randint(10,40)/10.0,df["Sex"][i],df["Color"][i])
+        status_code=add_glass(df["Name"][i],df["ID"][i],df["Brand"][i],random.choice(prices_list)/10.0,df["Sex"][i],df["Color"][i])
         if status_code!=201:
             all_sent=False
             break
         # else:
-        #     print(f"movie {i+1} added to db")
+        #     print(f"glass {i+1} added to db")
     print("***************************************")
     if all_sent:
-        print("Movies : OK")
+        print("Glasses : OK")
     else:
-        print(df["Name"][i],df["ID"][i],df["Brand"][i],random.randint(10,40)/10.0,df["Sex"][i],df["Color"][i])
-        print("Movies : ERROR")
+        print("Glasses : ERROR")
     print("***************************************")
 
-fill_movies()
-
+fill_glasses()

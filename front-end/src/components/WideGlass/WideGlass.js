@@ -1,7 +1,29 @@
 import classes from "../WideGlass/WideGlass.module.css";
 import deleteImage from "../../assets/delete.svg";
+import axios from "axios";
+import React, { useState } from "react";
 
 const WideGlass = (props) => {
+  const [isRemoved, setisRemoved] = useState(false);
+
+  const currentUser = () => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  };
+  const customHeader = () => ({
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Token " + currentUser().token,
+    },
+    validateStatus: (status) => status === 200,
+  });
+  function remWishlist() {
+    const requestOptions = customHeader();
+    axios.delete(
+      "http://127.0.0.1:8000/api/delbasket/" + String(props.array.id) + "/",
+      requestOptions
+    );
+    setRemoved(true);
+  }
   return (
     <div className={classes.GlassMini}>
       <a
@@ -24,10 +46,10 @@ const WideGlass = (props) => {
         <h1>{props.array.brand}</h1>
         <h1>{props.array.price}00</h1>
         {props.basket ? (
-          <div className={classes.delete}>
+          <button onClick={remWishlist} className={classes.delete}>
             <p>حذف</p>
             <img src={deleteImage} alt="delete" />
-          </div>
+          </button>
         ) : null}
       </div>
     </div>

@@ -23,7 +23,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/movie/?search=" + String(slug.search))
+      .get("http://127.0.0.1:8000/api/glass/?search=" + String(slug.search))
       .then((response) => setData(Object.values(response.data)));
   }, [slug.search]);
 

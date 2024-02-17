@@ -40,8 +40,8 @@ const GlassPage = (props) => {
     const requestOptions = customHeader();
     axios
       .post(
-        "http://127.0.0.1:8000/api/watchlist/",
-        { movie_saved_to_watch: Data.sku_id },
+        "http://127.0.0.1:8000/api/basketlist/",
+        { glass_saved_to_basket: Data.id },
         requestOptions
       )
       .then((flagReq) => {
@@ -53,7 +53,7 @@ const GlassPage = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/movie/" + String(slug.id))
+      .get("http://127.0.0.1:8000/api/glass/" + String(slug.id))
       .then((response) => setData(response.data));
   }, []);
   const [open, setOpen] = useState(false);

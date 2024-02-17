@@ -38,9 +38,9 @@ class ProfileInfoApiView(APIView):
         return Response(serializer.data)
 
 
-class MovieViewSet(viewsets.ModelViewSet):
-    serializer_class=serializers.MovieSerializer
-    queryset=models.Movie.objects.all()
+class GlassViewSet(viewsets.ModelViewSet):
+    serializer_class=serializers.GlassSerializer
+    queryset=models.Glass.objects.all()
     filter_backends=(filters.SearchFilter,)
     lookup_field="sku_id"
     search_fields=('name','brand','sex','color')
@@ -52,26 +52,26 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 
-class WatchListViewSet(viewsets.ModelViewSet):
+class BasketListViewSet(viewsets.ModelViewSet):
     authentication_classes=(TokenAuthentication,)
-    serializer_class=serializers.WatchListItemSerializer
-    queryset=models.WatchListItem.objects.all()
+    serializer_class=serializers.BasketListItemSerializer
+    queryset=models.BasketListItem.objects.all()
     permission_classes=(
-        permissions.UpdateOwnWatchList,
+        permissions.UpdateOwnBasketList,
         IsAuthenticated
     )
 
     def list(self,request):
-        queryset=models.WatchListItem.objects.filter(user_profile=self.request.user)
-        serializer=serializers.WatchListItemSerializer(queryset,many=True)
+        queryset=models.BasketListItem.objects.filter(user_profile=self.request.user)
+        serializer=serializers.BasketListItemSerializer(queryset,many=True)
         return Response(serializer.data)
 
     def perform_create(self,serializer):
         serializer.save(user_profile=self.request.user)
 
 class PageViewSet(viewsets.ViewSet):
-    serializer_class=serializers.MovieSerializer
-    queryset=models.Movie.objects.all()
+    serializer_class=serializers.GlassSerializer
+    queryset=models.Glass.objects.all()
     
     def list(self,request):
         return Response({"list":"list"})
@@ -79,13 +79,13 @@ class PageViewSet(viewsets.ViewSet):
     def retrieve(self,request,pk=None):
         start_p=int(pk)-1
         end_p=start_p+1
-        queryset=models.Movie.objects.all().order_by('-id')[start_p*8:end_p*8]
-        serializer=serializers.MovieSerializer(queryset,many=True)
+        queryset=models.Glass.objects.all().order_by('-id')[start_p*8:end_p*8]
+        serializer=serializers.GlassSerializer(queryset,many=True)
         return Response(serializer.data)
 
-class WatchListDeleterApiView(viewsets.ViewSet):
+class BasketListDeleterApiView(viewsets.ViewSet):
     authentication_classes=(TokenAuthentication,)
-    queryset=models.Movie.objects.all()
+    queryset=models.Glass.objects.all()
 
 
     def list(self,request):
@@ -94,7 +94,7 @@ class WatchListDeleterApiView(viewsets.ViewSet):
 
     def retrieve(self,request,pk=None):
         try:
-            x=models.WatchListItem.objects.filter(user_profile=self.request.user,movie_saved_to_watch=pk)
+            x=models.BasketListItem.objects.filter(user_profile=self.request.user,glass_saved_to_basket=pk)
             print("len : "+str(len(x)))
             if len(x)<1 :
                 return Response({"status": "not found"})
@@ -107,7 +107,7 @@ class WatchListDeleterApiView(viewsets.ViewSet):
 
     def destroy(self,request,pk=None):
         try:
-            x=models.WatchListItem.objects.filter(user_profile=self.request.user,movie_saved_to_watch=pk)
+            x=models.BasketListItem.objects.filter(user_profile=self.request.user,glass_saved_to_basket=pk)
             if len(x)<1:
                 return Response({"status":"not found"})
             else:

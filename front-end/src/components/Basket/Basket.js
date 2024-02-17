@@ -5,17 +5,31 @@ import blob from "../../assets/blob.svg";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
+function sum_price(Data){
+  let sum_price = 0;
+  Data.map((glass, index) => (
+    sum_price += glass.glass_details[0].price
+  ))
+  return sum_price;
+}
 const Basket = () => {
   const [Data, setData] = useState([
     {
-      sku_id: "",
-      name: "",
-      image: "",
-      brand: "",
-      sex: "",
-      price: 0,
-      color: "",
-      recommended: [],
+      id: 0,
+      user_profile: 0,
+      glass_saved_to_basket: 0,
+      glass_details: [
+        {
+          sku_id: "",
+          name: "",
+          image: "",
+          brand: "",
+          sex: "",
+          price: 0,
+          color: "",
+          recommended: [],
+        },
+      ],
     },
   ]);
 
@@ -33,7 +47,7 @@ const Basket = () => {
   useEffect(() => {
     const requestOptions = customHeader();
     axios
-      .get("http://127.0.0.1:8000/api/watchlist/", requestOptions)
+      .get("http://127.0.0.1:8000/api/basketlist/", requestOptions)
       .then((response) => setData(Object.values(response.data)));
   }, []);
 
@@ -46,7 +60,7 @@ const Basket = () => {
         <div className={classes.line}></div>
         <div className={classes.items}>
           {Data.map((glass, index) => (
-            <WideGlass array={glass} basket={true} />
+            <WideGlass array={glass.glass_details[0]} basket={true} />
           ))}
         </div>
       </div>
@@ -55,12 +69,12 @@ const Basket = () => {
       <div className={classes.sum}>
         <p className={classes.title}>جمع خرید من</p>
         {Data.map((glass, index) => (
-          <p className={classes.numbers}>{glass.price}</p>
+          <p className={classes.numbers}>{glass.glass_details[0].price}00.000</p>
         ))}
         <p className={classes.discount0}>۰</p>
         <p className={classes.discount}>تخفیف</p>
         <div className={classes.line2}></div>
-        <p className={classes.sumall}>۱۳.۸۰۰.۰۰۰</p>
+        <p className={classes.sumall}>{sum_price(Data)}00.000</p>
         <p className={classes.legend}>نهایی</p>
       </div>
     </div>

@@ -10,10 +10,10 @@ class UpdateOwnProfile(permissions.BasePermission):
         
         return obj.id==request.user.id
 
-class UpdateOwnWatchList(permissions.BasePermission):
-    """Allow user to update their own watchlist"""
+class UpdateOwnBasketList(permissions.BasePermission):
+    """Allow user to update their own basketlist"""
     def has_object_permission(self,request,view,obj):
-        """Check user is trying to edit their own watchlist"""
+        """Check user is trying to edit their own basketlist"""
         if request.method in permissions.SAFE_METHODS:
             return True
 

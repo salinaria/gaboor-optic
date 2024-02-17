@@ -6,12 +6,12 @@ from django.conf.urls import static
 from django.conf import settings
 router=DefaultRouter()
 router.register('profile',views.UserProfileViewSet) 
-router.register('movie',views.MovieViewSet)
+router.register('glass',views.GlassViewSet)
 
 
-router.register('watchlist',views.WatchListViewSet)
+router.register('basketlist',views.BasketListViewSet)
 router.register('page',views.PageViewSet)
-router.register('delwatch',views.WatchListDeleterApiView)
+router.register('delbasket',views.BasketListDeleterApiView)
 # router.register('files',views.FilesViewSet,basename='files')
 
 
