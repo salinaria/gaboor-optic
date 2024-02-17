@@ -69,7 +69,7 @@ const Basket = () => {
       <div className={classes.sum}>
         <p className={classes.title}>جمع خرید من</p>
         {Data.map((glass, index) => (
-          <p className={classes.numbers}>{glass.glass_details[0].price}00.000</p>
+          <p className={index>0?classes.numbers:classes.numbers0}>{index>0?'+ ':null}{glass.glass_details[0].price}00.000</p>
         ))}
         <p className={classes.discount0}>۰</p>
         <p className={classes.discount}>تخفیف</p>

@@ -24,21 +24,27 @@
 }
 .delete{
   display: flex;
-  border: 3px solid #535353;
+  border: 2px solid #535353;
   direction: ltr;
   width: 70px;
   border-radius: 10px;
   height: 35px;
+  background-color: transparent;
 }
 .delete p{
   font-size: 14px;
   margin-right: 5px;
-  margin-left: 10px;
+  margin-left: 2px;
   color: red;
-  margin-top: 7px;
+  margin-top: 5px;
+  font-family: 'IranSans';
 }
 .delete img{
   width: 15px;
+  margin-top: 5px;
+}
+.delete:hover{
+  background-color: black;
 }
 @media only screen and (max-width: 600px) {
   .image{

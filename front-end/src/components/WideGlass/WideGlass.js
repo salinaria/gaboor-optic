@@ -5,7 +5,6 @@ import React, { useState } from "react";
 
 const WideGlass = (props) => {
   const [isRemoved, setisRemoved] = useState(true);
-  
   const currentUser = () => {
     return JSON.parse(localStorage.getItem("currentUser"));
   };
@@ -16,6 +15,7 @@ const WideGlass = (props) => {
     },
     validateStatus: (status) => status === 200,
   });
+
   function remWishlist() {
     const requestOptions = customHeader();
     axios.delete(
@@ -23,6 +23,7 @@ const WideGlass = (props) => {
       requestOptions
     );
     setisRemoved(false);
+    window.location.reload();
   }
   return (
     <div>
