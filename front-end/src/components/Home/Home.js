@@ -74,7 +74,7 @@ const Home = () => {
         <img className={classes.slide_img} src={slide1} alt="slide" />
       </a>
       <div className={classes.newest}>
-        <h1 className={classes.new_text}>جدیدترین عینک‌ها</h1>
+        <h1 lang="fa" className={classes.new_text}>جدیدترین عینک‌ها</h1>
         <div className={classes.line}></div>
         <GlassMini array={newest} />
       </div>
@@ -86,7 +86,7 @@ const Home = () => {
       </a>
 
       <div className={classes.newest}>
-        <h1 className={classes.new_text}>
+        <h1 lang="fa" className={classes.new_text}>
           کالکشن فراری، ری-بن همکاری بهترین ها
         </h1>
         <div className={classes.line}></div>

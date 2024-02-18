@@ -54,10 +54,12 @@ body {
 
 .numbers{
   text-align: left;
+  font-size: 20px;
 }
 .numbers0{
   text-align: left;
   margin-left: 12px;
+  font-size: 20px;
 }
 .discount {
   text-align: right;
@@ -68,12 +70,14 @@ body {
 .discount0 {
   color: red;
   text-align: left;
-  margin-left: 15px;
+  margin-left: 10px;
+  font-size: 20px;
 }
 .sumall {
   text-align: left;
   margin-top: 0px;
   margin-left: 15px;
+  font-size: 20px;
 }
 .legend {
   text-align: right;

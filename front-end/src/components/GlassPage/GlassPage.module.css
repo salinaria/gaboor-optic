@@ -1,3 +1,11 @@
+:lang(fa)   {
+  font-family: 'IranSans';
+}
+:lang(en)   {
+  font-family: 'Antic';
+}
+
+
 p {
   text-align: right;
   margin-right: 2%;
@@ -61,6 +69,7 @@ p {
 .title img {
   width: 8px;
   margin-right: 5px;
+  margin-top: 5px;
 }
 .title p {
   margin-top: 0;
@@ -75,10 +84,17 @@ p {
   text-align: left;
   direction: ltr;
   width: 50%;
+  font-size: 30px;
+}
+.data h1{
+  font-size: 18px;
 }
 .names {
   text-align: right;
   width: 50%;
+}
+.names h1{
+  font-size: 16px;
 }
 .autocont h1 {
   margin-top: 20px;

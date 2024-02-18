@@ -29,7 +29,7 @@ const Navbar = () => {
       </div>
       <div className={classes.dropdown}>
         <div className={classes.brbutton}>
-          <p className={classes.brand_text}>برند‌ها</p>
+          <p lang="fa" className={classes.brand_text}>برند‌ها</p>
           <img src={brands} className={classes.brands} alt="icon" />
         </div>
         <div className={classes.brline} />
@@ -61,6 +61,7 @@ const Navbar = () => {
       <div className={classes.search_container}>
         <form>
           <input
+            lang="fa"
             ref={inputSearch}
             type="text"
             placeholder="جستجو..."

@@ -93,24 +93,24 @@ const GlassPage = (props) => {
         <div className={classes.info}>
           <div className={classes.title}>
             <img src={close} alt="close" />
-            <p>مشخصات عینک</p>
+            <p lang="fa">مشخصات عینک</p>
             <img src={close} alt="close" />
           </div>
           <div className={classes.autocont}>
             <div className={classes.data}>
-              <h1>{Data.name.substring(0, 23)}</h1>
-              <h1>{Data.brand}</h1>
-              <h1>{Data.sex}</h1>
-              <h1>{Data.color}</h1>
-              <h1>دستمال، جعبه</h1>
-              <h1>{Data.price}00.000</h1>
+              <h1 lang="en">{Data.name.substring(0, 23)}</h1>
+              <h1 lang="en">{Data.brand}</h1>
+              <h1 lang="fa">{Data.sex}</h1>
+              <h1 lang="fa">{Data.color}</h1>
+              <h1 lang="fa">دستمال، جعبه</h1>
+              <h1 lang="en">{Data.price}00.000</h1>
             </div>
             <img
               src={glassline}
               className={classes.glassline}
               alt="glassline"
             />
-            <div className={classes.names}>
+            <div lang="fa" className={classes.names}>
               <h1>مدل</h1>
               <h1>برند</h1>
               <h1>جنسیت</h1>
@@ -126,7 +126,7 @@ const GlassPage = (props) => {
         </div>
       </div>
       <div className={classes.newest}>
-        <h1 className={classes.new_text}>پیشنهادی بر اساس انتخاب شما</h1>
+        <h1 lang="fa" className={classes.new_text}>پیشنهادی بر اساس انتخاب شما</h1>
         <div className={classes.line}></div>
         <GlassMini array={Data.recommended} />
       </div>

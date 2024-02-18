@@ -27,7 +27,7 @@
   z-index: 1;
   margin-left: 32.5%;
   display: block;
-  margin-top: 80px;
+  margin-top: 30px;
   width: 35%;
   padding: 10px;
   padding-top: 0px;
@@ -83,4 +83,29 @@
   border-radius: 200px;
   background: linear-gradient(121.65deg, #ff3307 -1.51%, #DB0000 94.85%);
   filter: blur(7px);
+}
+
+@media only screen and (max-width: 600px) {
+  .body{
+    width: calc(80% - 20px);
+    margin-left: 10%;
+    margin-top: 100px;
+    background: none;
+    border: none;
+  }
+  .txt{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .btntxt{
+    font-size: 20px;
+    margin-left: -50px;
+    margin-top: 10px;
+  }
+  .bacx{
+    display: none;
+  }
+  .bacy{
+    display: none;
+  }
 }

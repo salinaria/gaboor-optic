@@ -56,13 +56,13 @@ const Basket = () => {
       <Navbar />
       {Data.length === 0 ? (
         <div className={classes.empty}>
-          <p>سبد خرید شما خالی است</p>
+          <p lang="fa">سبد خرید شما خالی است</p>
           <img src={basket} alt="basket" />
         </div>
       ) : (
         <div>
           <div className={classes.container}>
-            <h1 className={classes.find}>سبد خرید من</h1>
+            <h1 lang="fa" className={classes.find}>سبد خرید من</h1>
             <div className={classes.line}></div>
             <div className={classes.items}>
               {Data.map((glass, index) => (
@@ -73,21 +73,21 @@ const Basket = () => {
 
           <img src={blob} alt="blob" className={classes.blob} />
           <div className={classes.sum}>
-            <p className={classes.title}>جمع خرید من</p>
+            <p lang="fa" className={classes.title}>جمع خرید من</p>
             {Data.map((glass, index) => (
-              <p className={index > 0 ? classes.numbers : classes.numbers0}>
+              <p lang="en" className={index > 0 ? classes.numbers : classes.numbers0}>
                 {index > 0 ? "+ " : null}
                 {glass.glass_details[0].price}00.000
               </p>
             ))}
             <p className={classes.discount0}>0</p>
-            <p className={classes.discount}>تخفیف</p>
+            <p lang="fa" className={classes.discount}>تخفیف</p>
             <div className={classes.line2}></div>
             <p className={classes.sumall}>
               {sum_price(Data)}
               {(sum_price(Data) * 10) % 10 === 0 ? ".000.000" : "00.000"}{" "}
             </p>
-            <p className={classes.legend}>نهایی</p>
+            <p lang="fa" className={classes.legend}>نهایی</p>
           </div>
         </div>
       )}
