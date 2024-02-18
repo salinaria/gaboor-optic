@@ -1,79 +1,86 @@
-.welcome{
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 30px;
-    margin-right: 5%;
-    margin-top: 50px;
-    margin-bottom: -30px;
+.btn {
+  background: none;
+  border: none;
+  display: flex;
+  margin-top: 50px;
 }
-.welcome img{
-    width: 100px;
+.btntxt {
+  font-family: "Antic";
+  font-size: 30px;
+  color: #eb1b1b;
+  margin-top: 5px;
+  margin-left: -20px;
+  width: 100px;
 }
-.welcome p{
-    margin-left: 10px;
+.txt {
+  font-family: "Antic";
+  font-size: 30px;
+  color: white;
+  margin-top: 2px;
+  margin-left: 15px;
+}
+.btnimg {
+  width: 45px;
+  height: 45px;
+}
+.body {
+  z-index: 1;
+  margin-left: 32.5%;
+  display: block;
+  margin-top: 80px;
+  width: 35%;
+  padding: 10px;
+  padding-top: 0px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(40, 46, 52, 0.4) 0%,
+    rgba(40, 46, 52, 0.1) 75%
+  );
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  border: 0.5px solid white;
 }
 
-.change{
-    display: grid;
-    margin-top: 30px;
-    padding-right: 20px;
-    background-color: #101010;
-    border-radius: 8px;
-    width: 65%;
-    margin-left: 27%;
-    text-align: right;
+.bacy {
+  position: absolute;
+  margin-top: 20px;
+  margin-bottom: -600px;
+  margin-left: 30%;
+  z-index: -100;
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  background: linear-gradient(121.65deg, #ff3307 -1.51%, #DB0000 94.85%);
+  animation: wave 10s linear infinite;
+  filter: blur(7px);
 }
-.change img{
-    width: 10px;
-    margin-top: 23px;
-    margin-left: 10px;
-    display: grid;
-    grid-column: 1/2;
+@keyframes wave {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(200px, 250px);
+  }
+  50% {
+    transform: translate(200px, 0px);
+  }
+  75% {
+    transform: translate(0px, 250px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
-.change p{
-    text-align: right;
-    display: grid;
-    grid-column: 2/2;
+.bacx {
+  position: absolute;
+  margin-top: -130px;
+  margin-left: 60%;
+  z-index: -100;
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+  background: linear-gradient(121.65deg, #ff3307 -1.51%, #DB0000 94.85%);
+  filter: blur(7px);
 }
-
-.purchase {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-  }
-  .pur_text {
-    text-align: right;
-    margin-right: 5%;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: normal;
-    color: white;
-  }
-  .line {
-    border-radius: 5px;
-    width: 75%;
-    margin-left: 20%;
-    height: 3px;
-    background-color: red;
-    margin-top: 10px;
-  }
-  
-
-@media only screen and (max-width: 600px) {
-    .welcome{
-        margin-top: 80px;
-        font-size: 23px;
-        margin-right: 2%;
-        margin-bottom: 0px;
-    }
-    .welcome img{
-        width: 60px;
-    }
-    .change{
-      width: 90%;
-      margin-left: 2%;
-      border: none;
-      margin-top: 10px;
-    }
-  }
