@@ -38,9 +38,9 @@ const Signup = () => {
     <div>
       <Navbar />
       <div className={classes.container}>
-        <p className={classes.title}>ثبت نام</p>
+        <p lang="fa" className={classes.title}>ثبت نام</p>
         <div className={classes.form}>
-          <p>نام</p>
+          <p lang="fa">نام</p>
           <input
             ref={input1}
             type="text"
@@ -48,7 +48,7 @@ const Signup = () => {
             name="name"
             className={classes.box}
           />
-          <p>ایمیل</p>
+          <p lang="fa">ایمیل</p>
           <input
             ref={input2}
             type="email"
@@ -56,7 +56,7 @@ const Signup = () => {
             name="email"
             className={classes.box}
           />
-          <p>رمز عبور</p>
+          <p lang="fa">رمز عبور</p>
           <input
             ref={input3}
             type="password"
@@ -64,7 +64,7 @@ const Signup = () => {
             name="password"
             className={classes.box}
           />
-          <p>تکرار رمز عبور</p>
+          <p lang="fa">تکرار رمز عبور</p>
           <input
             ref={input4}
             type="password"
@@ -73,12 +73,12 @@ const Signup = () => {
             className={classes.box}
           />
 
-          <button onClick={signup} className={classes.btn}>
+          <button lang="fa" onClick={signup} className={classes.btn}>
             ساخت حساب
           </button>
         </div>
         <a href="/Login" className={classes.Signup}>
-          <p>حساب دارم! ورود</p>
+          <p lang="fa">حساب دارم! ورود</p>
           <img src={next} alt="Login" />
         </a>
       </div>

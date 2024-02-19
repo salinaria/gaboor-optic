@@ -60,7 +60,7 @@ const GlassPage = (props) => {
   return (
     <div>
       <Navbar />
-      <p className={classes.comeon}>
+      <p lang="fa" className={classes.comeon}>
         !با استفاده از واقعیت مجازی، عینک را روی صورت خود ببینید و بعد انتخاب
         کنید
       </p>

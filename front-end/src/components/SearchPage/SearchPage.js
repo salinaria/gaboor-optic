@@ -30,8 +30,8 @@ const SearchPage = () => {
   return (
     <div>
       <Navbar />
-      <h1 className={classes.find}>نتایج جستجوی</h1>
-      <h1 className={classes.prompt}>{slug.search}</h1>
+      <h1 lang="fa" className={classes.find}>نتایج جستجوی</h1>
+      <h1 lang="fa" className={classes.prompt}>{slug.search}</h1>
       <div className={classes.line}></div>
       <div className={classes.results}>
         {Data.map((glass, index) => (

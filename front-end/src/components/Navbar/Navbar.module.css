@@ -148,8 +148,6 @@
 .searchbox:focus{
   outline: none;
   background-color:#ffffff;
-  font-family: 'Antic';
-  font-size: 25px;
 }
 .search {
   width: 30px;
