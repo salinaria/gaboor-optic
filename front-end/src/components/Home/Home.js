@@ -3,6 +3,7 @@ import classes from "../Home/Home.module.css";
 import slide1 from "../../assets/slide1.png";
 import slide2 from "../../assets/slide2.jpg";
 import GlassMini from "../Miniglass/Miniglass";
+import Footer from "../Footer/Footer";
 
 const newest = [
   {
@@ -92,6 +93,7 @@ const Home = () => {
         <div className={classes.line}></div>
         <GlassMini array={ferrari} />
       </div>
+      <Footer/>
     </div>
   );
 };
