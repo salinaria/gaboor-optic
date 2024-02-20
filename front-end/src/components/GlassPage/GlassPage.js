@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import Footer from "../Footer/Footer";
 
 const GlassPage = (props) => {
   let slug = useParams();
@@ -130,6 +131,7 @@ const GlassPage = (props) => {
         <div className={classes.line}></div>
         <GlassMini array={Data.recommended} />
       </div>
+      <Footer/>
     </div>
   );
 };

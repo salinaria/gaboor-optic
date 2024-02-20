@@ -5,6 +5,7 @@ import blob from "../../assets/blob.svg";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import basket from "../../assets/basket.svg";
+import Footer from "../Footer/Footer"
 
 function sum_price(Data) {
   let sum_price = 0;
@@ -114,6 +115,14 @@ const Basket = () => {
         <a lang="fa" href="/login">ورود به حساب کاربری</a>
         </div>
       )}
+      {Data.length<3?(
+        <div className={classes.footer}>
+        <Footer />
+        </div>
+      ):(
+        <Footer/>
+      )}
+      
     </div>
   );
 };
