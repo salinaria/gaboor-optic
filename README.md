@@ -1,6 +1,6 @@
 # Gaboor Optic
 
-It's a glasses shop porject which enable the customers to watch the glasses on their face using 3D augmented reality.
+It's a glasses shop porject enabling the customers to watch the glasses on their face using 3D augmented reality.
 
 ## How to Run
 ### Install Requirements
@@ -19,8 +19,11 @@ It's a glasses shop porject which enable the customers to watch the glasses on t
     $ npm start
     
 ## Examples of the run
-![image](https://github.com/salinaria/gaboor-optic/blob/main/1.png)
+<p align="center">
+  <img src="https://github.com/salinaria/gaboor-optic/blob/main/1.png?raw=true" alt="Logo" />
+  <img src="https://github.com/salinaria/gaboor-optic/blob/main/2.png?raw=true" alt="Logo"/>
+</p>
 
 ## Report
-My report in Farsi is available [Here](https://github.com/salinaria/gaboor-optic/blob/main/payan_name.pdf).
+My paper in Farsi is available [Here](https://github.com/salinaria/gaboor-optic/blob/main/payan_name.pdf).
 
