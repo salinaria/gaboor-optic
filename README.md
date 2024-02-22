@@ -2,6 +2,8 @@
 
 It's a glasses shop porject enabling the customers to watch the glasses on their face using 3D augmented reality.
 
+Special thanks to Sajad Alipoor [CR7](https://github.com/sajadalipour7)! :heart:
+
 ## How to Run
 ### Install Requirements
     $ pip install django
