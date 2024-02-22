@@ -19,10 +19,8 @@ It's a glasses shop porject which enable the customers to watch the glasses on t
     $ npm start
     
 ## Examples of the run
-<p align="center">
-    ![image](https://github.com/salinaria/gaboor-optic/blob/main/1.png)
-    ![image](https://github.com/salinaria/gaboor-optic/blob/main/2.png)
-</p>
+![image](https://github.com/salinaria/gaboor-optic/blob/main/1.png)
+![image](https://github.com/salinaria/gaboor-optic/blob/main/2.png)
 ## Report
 My report in Farsi is available [Here](https://github.com/salinaria/gaboor-optic/blob/main/payan_name.pdf).
 
