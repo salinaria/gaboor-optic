@@ -1,8 +1,6 @@
 # Gaboor Optic
 
-The aim of this project is to diagnose heart disease based on a `fuzzy expert system`.
-
-
+It's a glasses shop porject which enable the customers to watch the glasses on their face using 3D augmented reality.
 
 ## How to Run
 ### Install Requirements
@@ -20,10 +18,11 @@ The aim of this project is to diagnose heart disease based on a `fuzzy expert sy
     $ cd ./frontend/
     $ npm start
     
-## An Example of Input and Result
-![image](https://user-images.githubusercontent.com/72709191/196000393-6a60aad1-5ee6-4dc6-a423-c7b443770dfd.png)
-![image](https://user-images.githubusercontent.com/72709191/196000274-0abac9f5-3517-4b63-a897-5c3019289170.png)
-
+## Examples of the run
+<p align="center">
+    ![image](https://github.com/salinaria/gaboor-optic/blob/main/1.png)
+    ![image](https://github.com/salinaria/gaboor-optic/blob/main/2.png)
+</p>
 ## Report
 My report in Farsi is available [Here](https://github.com/salinaria/gaboor-optic/blob/main/payan_name.pdf).
 
